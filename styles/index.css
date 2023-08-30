@@ -95,11 +95,9 @@ body {
   bottom: 0;
   width: 100%;
 }
-<<<<<<< HEAD
-/*update to make link clickable area limited*/
-=======
 
->>>>>>> d16a804 (too many changes, bear with me)
+/*update to make link clickable area limited*/
+
 a {
   color: #007bff;
   text-decoration: none;
