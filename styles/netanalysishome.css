@@ -1,47 +1,104 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.container {
+    background-color: #fafafa;
+  }
+  
+  .header-container {
     display: flex;
-    justify-content: space-around;
-    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(180deg, #e378f8, #007bff);
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img{
+    margin-right: 10px;
+  }
+
+  .logo h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .NetworkHeader h1{
+    text-align: center;
+  }
+
+  div#data-visualization {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  input#urltoscan {
+    position: relative;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #aed4fd;
+    box-shadow: inset 2px 5px 7px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+  }
+  
+  input:focus {
+    background-color: white;
+    transform: scale(1.025);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: center;
+    top: 30px;
+    opacity:.8;
+    background: linear-gradient(180deg, #72ace9, #007bff);
+    box-shadow:  7px 6px 7px #125eae;
+  }
+  button:hover{
+    background-color: rgb(64, 174, 234);
+    opacity: 1;
+    transition-duration: 0.7s;
+    box-shadow: 0 0 5px #0b5fbe,
+                0 0 25px #0b5fbe,
+                0 0 50px #0b5fbe,
+                0 0 100px #0b5fbe;
+  }
+  button:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(25px);
+  }
+
+.introduction {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.chart-container {
-    flex: 1;
-    max-width: 40%;
+.introduction p {
+    font-size: 18px;
 }
 
-.table-container {
-    flex: 1;
+.search-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-.chart-container canvas {
-    max-width: 100%;
-}

@@ -4,27 +4,6 @@
 <head>
     <title>Cybernaut</title>
     <link rel="stylesheet" href="/styles/netanalysishome.css">
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .netanalysis,
-        .website-structure,
-        .scan-file,
-        .explore-database {
-            flex: 0 0 calc(50% - 10px);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .container a {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -34,58 +13,22 @@
                 <img src="/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
                 <h1>Cybernaut</h1>
             </div>
-            <a href="/index.html" class="contact-us">Contact Us</a>
+        </div>
+        <div class="NetworkHeader">
+            <h1>Network Analysis</h1>
         </div>
     </header>
-    <div class="intro-container">
-        <div class="hero-section">
-            <div class="hero-content">
-                <h1>Welcome to Cybernaut</h1>
-                <p>Cybernaut will help you navigate the intricate landscape of the digital world with confidence and security. Our suite of innovative tools and services empowers you to explore, analyze, and safeguard your digital experiences. Whether you're a security enthusiast, a web developer, or simply curious about the depths of cyberspace, Cybernaut has you covered.</p>
-                <div class="get-started-button">
-                    <a href="#scroll-target" class="cta-button">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <main>
-        <div class="container" id="scroll-target">
-            <div class="netanalysis">
-                <a href="/netanalysis.html">
-                    <img src="/images/networkanalysisimage.jpeg" height="200" width="300" alt="Network Analysis">
-                </a>
-                <br>
-                <a href="/netanalysis.html">Network Analysis</a>
-            </div>
-
-            <div class="website-structure">
-                <a href="/index.html">
-                    <img src="/images/networkanalysisimage.jpeg" height="200" width="300" alt="Website Structure">
-                </a>
-                <br>
-                <a href="/index.html">Website Structure</a>
-            </div>
+        <div class="introduction">
+            <p>Welcome to Cybernaut's Network Analysis tool. Enter a URL below to get started:</p>
         </div>
-        <div class="container">
-            <div class="scan-file">
-                <a href="/index.html"><img src="/images/networkanalysisimage.jpeg" height="200" width="300"></a>
-                <br>
-                <a href="/index.html">Scan a File</a>
-            </div>
-
-            <div class="explore-database">
-                <a href="/index.html"><img src="/images/networkanalysisimage.jpeg" height="200" width="300"></a>
-                <br>
-                <a href="/index.html">Explore Cybernaut Database</a>
-            </div>
+        <div class="search-container">
+            <input type="text" id="urltoscan" placeholder="Enter a URL">
+            <button><a href="#">Scan URL</a></button>
         </div>
     </main>
-    
+
     <footer>
-        <div class="footer">
-            <a href="https://virustotal.com/gui/" target="_main" style="color:#fafafa"> Powered By VirusTotal</a>
-        </div>
     </footer>
 </body>
 
