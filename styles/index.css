@@ -12,10 +12,11 @@ body {
 
 /* Header styles */
 .header-container {
+  background: linear-gradient(180deg, #e378f8, #007bff);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 7px;
   background-color: #007bff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   color: white;
@@ -28,6 +29,11 @@ body {
 }
 
 .left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
   display: flex;
   align-items: center;
 }
