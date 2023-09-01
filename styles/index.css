@@ -68,6 +68,10 @@ body {
   font-size: 18px;
   margin-bottom: 30px;
 }
+.get-started-button {
+ display: flex;
+ justify-content: center;
+}
 
 .cta-button {
   background-color: #007bff;
@@ -123,7 +127,7 @@ body {
 
 .footer {
   background-color: #007bff;
-  padding: 10px;
+  padding: 1px;
   text-align: center;
   position: fixed;
   bottom: 0;
