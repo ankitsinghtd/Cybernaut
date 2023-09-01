@@ -1,3 +1,6 @@
+html {
+  scroll-behavious: smooth;
+}
 body {
   font-family: sans-serif;
   margin: 0;
