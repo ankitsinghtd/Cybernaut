@@ -88,14 +88,14 @@ body {
 }
 
 .cta-button:hover {
-  background-color: purple;
+  background-color: rgb(165, 11, 165);
 }
 
 
 .intro-container {
   background-color: #f5f5f5;
-  padding: 30px 0;
   text-align: center;
+  /*padding: 30px 0;*/
 }
 
 .intro-content {  
