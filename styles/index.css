@@ -1,6 +1,8 @@
-html {
+html{
   scroll-behavior: smooth;
 }
+
+/* Reset styles and common styles */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -8,16 +10,24 @@ body {
   background-color: #fafafa;
 }
 
+/* Header styles */
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background: linear-gradient(180deg, #e378f8, #007bff);
   color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
 }
 
-.logo {
+.header-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.left-section {
   display: flex;
   align-items: center;
 }
@@ -31,30 +41,31 @@ body {
   font-size: 24px;
 }
 
+.right-section {
+  margin-left: auto; /* Pushes the "Contact Us" link to the right corner */
+}
+
 .contact-us {
+  text-decoration: none;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: absolute left top;
-  top: 30px;
-  opacity: .8;
   background: linear-gradient(180deg, #e378f8, #007bff);
   box-shadow: 7px 6px 7px #125eae;
   transition: all 0.3s ease;
-  width: 90px;
-  height: 20px;
 }
 
 .contact-us:hover {
-  background-color: rgb(64, 174, 234);
   opacity: 1;
-  box-shadow: 0 0 5px #0b5fbe, 0 0 25px #0b5fbe, 0 0 20px #0b5fbe, 0 0 50px #0b5fbe;
+  box-shadow: 0 0 5px #448de0, 0 0 25px #70aaec, 0 0 20px #0b5fbe, 0 0 50px #0b5fbe;
   transform: translateY(-3px);
 }
+
+/* Hero section styles */
 .hero-section {
-  background-image: url('/images/CyberHero.png'); 
+  background-image: url('/images/CyberHero.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -71,19 +82,19 @@ body {
   font-size: 18px;
   margin-bottom: 30px;
 }
+
 .get-started-button {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .cta-button {
   background-color: #007bff;
   color: white;
-  padding: 15px 0px;
+  padding: 15px 30px;
   border-radius: 5px;
   text-decoration: none;
   font-size: 16px;
-  width:20%;
   transition: background-color 0.6s ease;
 }
 
@@ -91,25 +102,7 @@ body {
   background-color: rgb(165, 11, 165);
 }
 
-
-.intro-container {
-  background-color: #f5f5f5;
-  text-align: center;
-  /*padding: 30px 0;*/
-}
-
-.intro-content {  
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.intro-content p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
-
+/* Container styles */
 .container {
   display: flex;
   justify-content: space-between;
@@ -128,6 +121,13 @@ body {
   width: 300px;
 }
 
+.link-box a {
+  font-size: 20px;
+  color:#007bff;
+  text-decoration: none;
+}
+
+/* Footer styles */
 .footer {
   background-color: #007bff;
   padding: 1px;
@@ -136,14 +136,15 @@ body {
   bottom: 0;
   width: 100%;
 }
-/*update to make link clickable area limited*/
-a {
-  color: #007bff;
+
+/* Footer link styles */
+.powered-by-link {
+  color: #fafafa;
   text-decoration: none;
   margin: 5px;
   display: block;
 }
 
-a:hover {
+.powered-by-link:hover {
   text-decoration: underline;
 }
