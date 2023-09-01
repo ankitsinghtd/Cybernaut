@@ -136,9 +136,7 @@ body {
   bottom: 0;
   width: 100%;
 }
-
 /*update to make link clickable area limited*/
-
 a {
   color: #007bff;
   text-decoration: none;
