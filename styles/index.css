@@ -1,5 +1,5 @@
 html {
-  scroll-behavious: smooth;
+  scroll-behavior: smooth;
 }
 body {
   font-family: sans-serif;
@@ -140,7 +140,7 @@ body {
 a {
   color: #007bff;
   text-decoration: none;
-  margin: 10px;
+  margin: 5px;
   display: block;
 }
 
