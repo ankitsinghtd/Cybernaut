@@ -10,15 +10,15 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #007bff; /* Use a solid background color instead of gradient */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for the neumorphic effect */
+    background-color: #007bff; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     color: white;
-    border-radius: 15px; /* Add some border radius for a softer look */
-    transition: box-shadow 0.3s ease; /* Add a transition for the shadow on hover */
+    border-radius: 15px; 
+    transition: box-shadow 0.3s ease; 
 }
 
 .header-container:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
 }
 
 .logo {
