@@ -6,6 +6,7 @@ body {
 }
 
 .header-container {
+    background: linear-gradient(180deg, #e378f8, #007bff);
     display: flex;
     align-items: center;
     justify-content: space-between;
