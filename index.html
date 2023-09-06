@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybernaut</title>
-    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="src/styles/index.css">
 </head>
 
 <body>
@@ -18,27 +18,15 @@
                 </div>
             </div>
             <div class="right-section">
-                <div class="dropdown">
-                    <button class="menu-buttons">Tools &#9662;</button>
-                    <div class="dropdown-content">
-                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
-                        <a href="/src/pages/webstructure.html">Website Structure</a>
-                        <a href="/src/pages/filescan.html">Scan a File</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="menu-buttons">Services &#9662;</button>
-                    <div class="dropdown-content">
-                        <a href="/articles.html">Articles</a>
-                        <a href="/blog.html">Blog</a>
-                        <a href="/news.html">News</a>
-                    </div>
-                </div>
+                <a href="/services.html" class="menu-buttons">Services</a>
+                <a href="/blog.html" class="menu-buttons">Blog</a>
                 <a href="/about.html" class="menu-buttons">About</a>
                 <a href="/index.html" class="menu-buttons">Contact Us</a>
+                <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
     </header>
+    <script src="src/scripts/index.js"></script>
     <div class="hero-section">
         <div class="hero-card">
             <div class="hero-content">
