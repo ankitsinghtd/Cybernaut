@@ -126,7 +126,6 @@ body {
 }
 
 /* Container styles */
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -143,70 +142,64 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
-.link-box .front-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.link-box .content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: relative;
-  height: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
-  color: #e8e8e8;
-  padding: 20px;
-  line-height: 1.5;
-  border-radius: 5px;
-  pointer-events: none;
-  transform: translateX(-96%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.link-box .content .heading {
-  font-size: 32px;
-  font-weight: 700;
+.link-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .link-box img {
   height: 280px;
   width: 280px;
-}
-
-.link-box:hover .content{
-  transform: translateY(0);
-}
-
-.link-box:hover .front-content {
-  transform: translateX(-30%);
+  transition: transform 0.9s ease;
+  outline: 2px solid transparent;
 }
 
 .link-box:hover img {
   transform: scale(1.05);
-  transition: transform 0.9s ease;
-  outline: 2px solid #e8e8e8;
-  background: transparent;
-  color: #e8e8e8;
+}
+
+.link-box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.link-box:hover .content {
+  transform: translateY(0);
 }
 
 .link-box a {
   font-size: 20px;
   color: #007bff;
   text-decoration: none;
+}
+
+.link-box .heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.link-box p {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /*Chatbot styles  */
