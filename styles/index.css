@@ -133,6 +133,11 @@ body {
   text-decoration: none;
 }
 
+/*Chatbot styles  */
+.chatbot {
+  position: center;
+}
+
 /* Footer styles */
 .footer {
   background-color: #007bff;
