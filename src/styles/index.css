@@ -1,9 +1,12 @@
+@import url'https://fonts.google.com/specimen/Orbitron'
 html {
   scroll-behavior: smooth;
 }
 
 /* Reset styles and common styles */
-
+head {
+  font-family: https://fonts.google.com/specimen/Orbitron;
+}
 body {
   font-family: sans-serif;
   margin: 0;
