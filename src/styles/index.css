@@ -80,7 +80,7 @@ body {
 /* Hero section styles */
 
 .hero-section {
-  background-image: url('/images/CyberHero.png');
+  background-image: url('/src/images/CyberHero.png');
   background-size: cover;
   background-position: center;
   color: white;
