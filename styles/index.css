@@ -134,16 +134,49 @@ body {
 }
 
 /*Chatbot styles  */
-.chatbot {
-  position: center;
+.chatbot-button {
+  position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom as needed */
+  right: 20px; /* Adjust the distance from the right as needed */
+  background-color: #040a10; /* Change the background color as desired */
+  color: #fff; /* Change the text color as desired */
+  border: none;
+  border-radius: 50%; /* Makes the button round */
+  width: 70px; /* Adjust the button size as needed */
+  height: 70px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  z-index: 1000; /* Ensure the button is above other content */
 }
+
+.chatbot {
+  /* Your existing styles for the chatbot container */
+  display: none;
+  /* Additional styles for the chatbot when it's displayed */
+  position: fixed;
+  bottom: 90px; /* Adjust the distance from the bottom as needed */
+  right: 30px; /* Adjust the distance from the right as needed */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 700px; /* Adjust the chatbot width as needed */
+  height: 400px; /* Adjust the chatbot height as needed */
+  overflow: hidden;
+}
+
+.show-chatbot {
+  display: block;
+}
+
 
 /* Footer styles */
 .footer {
   background-color: #007bff;
   padding: 1px;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
