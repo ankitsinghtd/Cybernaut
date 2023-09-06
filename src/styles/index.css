@@ -3,7 +3,6 @@ html {
 }
 
 /* Reset styles and common styles */
-
 body {
   font-family: sans-serif;
   margin: 0;
@@ -91,33 +90,40 @@ body.dark {
   transition: color 0.3s ease;
 }
 /* Hero section styles */
-
 .hero-section {
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
   padding: 100px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .hero-card {
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+.hero-content {
+  padding: 5% 10%;
+}
+
 .hero-content h1 {
   color: #fff;
-  font-size: 24px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .hero-content p {
   color: #fff;
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  line-height: 2; 
+  opacity: 1;
 }
 
 .get-started-button {
@@ -139,79 +145,48 @@ body.dark {
   background-color: rgb(165, 11, 165);
 }
 
-/* Container styles */
-.container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
 
-.link-box {
-  flex: 0 0 calc(33.33% - 20px);
+/* Style for the "What We Do" section */
+.what-we-do {
+  background-color: #f9f9f9;
+  padding: 50px 0;
   text-align: center;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  text-decoration: none; 
-  color: inherit; 
 }
 
-.link-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+.what-we-do h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 20px;
 }
 
-.link-box img {
-  height: 280px;
-  width: 280px;
-  transition: transform 0.9s ease;
-  outline: 2px solid transparent;
+.what-we-do p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-.link-box:hover img {
-  transform: scale(1.05);
-}
-
-.link-box .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Style for the "How Cybernaut Works" section */
+.how-it-works {
+  background-color: #f9f9f9;
+  padding: 50px 0;
   text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 20px;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.link-box:hover .content {
-  transform: translateY(0);
+.how-it-works h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 20px;
 }
 
-.link-box .heading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.how-it-works p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
 }
-
-.link-box p {
-  font-size: 16px;
-  margin: 0;
-  line-height: 1.4;
-}
-
 
 /*Chatbot styles  */
 
@@ -270,4 +245,32 @@ body.dark {
 
 .powered-by-link:hover {
   text-decoration: underline;
+}
+
+/* responsive stuff */
+
+@media (max-width: 768px) {
+  /* Adjust styles here */
+  .header-container {
+      padding: 5px;
+  }
+
+  .menu-buttons {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  /* Adjust styles here */
+  .header-container {
+      padding: 3px;
+  }
+
+  .menu-buttons {
+      padding: 5px 10px;
+      font-size: 12px;
+  }
+
 }
