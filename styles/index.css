@@ -14,6 +14,10 @@ body {
 /* Header styles */
 
 .header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: linear-gradient(180deg, #e378f8, #007bff);
   display: flex;
   align-items: center;
@@ -24,6 +28,7 @@ body {
   color: white;
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
+  z-index: 100;
 }
 
 .header-container:hover {
