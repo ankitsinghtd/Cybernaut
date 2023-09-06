@@ -144,6 +144,8 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  text-decoration: none; /* Add this line to remove underlines */
+  color: inherit; /* Inherit text color from parent */
 }
 
 .link-box:hover {
@@ -184,12 +186,6 @@ body {
   transform: translateY(0);
 }
 
-.link-box a {
-  font-size: 20px;
-  color: #007bff;
-  text-decoration: none;
-}
-
 .link-box .heading {
   font-size: 24px;
   font-weight: bold;
@@ -201,6 +197,7 @@ body {
   margin: 0;
   line-height: 1.4;
 }
+
 
 /*Chatbot styles  */
 
