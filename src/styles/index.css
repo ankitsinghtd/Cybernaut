@@ -89,7 +89,9 @@ body.dark {
   color: #007bff; /* Light theme color */
   transition: color 0.3s ease;
 }
+
 /* Hero section styles */
+
 .hero-section {
   background-size: cover;
   background-position: center;
@@ -147,6 +149,7 @@ body.dark {
 
 
 /* Style for the "What We Do" section */
+
 .what-we-do {
   background-color: #f9f9f9;
   padding: 50px 0;
