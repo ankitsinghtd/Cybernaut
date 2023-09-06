@@ -79,7 +79,6 @@ body {
 /* Hero section styles */
 
 .hero-section {
-  background-image: url('/src/images/CyberHero.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -87,12 +86,22 @@ body {
   padding: 100px 0;
 }
 
+.hero-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
 .hero-content h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .hero-content p {
+  color: #fff;
   font-size: 18px;
   margin-bottom: 30px;
 }
@@ -137,17 +146,40 @@ body {
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
-
-.link-box::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.link-box .front-content {
   width: 100%;
-  height: 5px;
-  background: linear-gradient(-45deg, #007bff 0%, #e378f8 100% );
-  z-index: -1;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.link-box .content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: relative;
+  height: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateX(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.link-box .content .heading {
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .link-box img {
@@ -155,12 +187,16 @@ body {
   width: 280px;
 }
 
-.link-box:hover {
-  transform: scale(1.05);
+.link-box:hover .content{
+  transform: translateY(0);
+}
+
+.link-box:hover .front-content {
+  transform: translateX(-30%);
 }
 
 .link-box:hover img {
-  transform: scale(1.05); 
+  transform: scale(1.05);
   transition: transform 0.9s ease;
   outline: 2px solid #e8e8e8;
   background: transparent;
