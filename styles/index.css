@@ -3,6 +3,7 @@ html {
 }
 
 /* Reset styles and common styles */
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -11,6 +12,7 @@ body {
 }
 
 /* Header styles */
+
 .header-container {
   background: linear-gradient(180deg, #e378f8, #007bff);
   display: flex;
@@ -70,6 +72,7 @@ body {
 }
 
 /* Hero section styles */
+
 .hero-section {
   background-image: url('/images/CyberHero.png');
   background-size: cover;
@@ -109,6 +112,7 @@ body {
 }
 
 /* Container styles */
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -134,42 +138,40 @@ body {
 }
 
 /*Chatbot styles  */
+
 .chatbot-button {
   position: fixed;
-  bottom: 20px; /* Adjust the distance from the bottom as needed */
-  right: 20px; /* Adjust the distance from the right as needed */
-  background-color: #040a10; /* Change the background color as desired */
-  color: #fff; /* Change the text color as desired */
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #040a10;
+  color: #fff; 
   border: none;
-  border-radius: 50%; /* Makes the button round */
-  width: 70px; /* Adjust the button size as needed */
+  border-radius: 50%; 
+  width: 70px;
   height: 70px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
-  z-index: 1000; /* Ensure the button is above other content */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 .chatbot {
-  /* Your existing styles for the chatbot container */
   display: none;
-  /* Additional styles for the chatbot when it's displayed */
   position: fixed;
-  bottom: 90px; /* Adjust the distance from the bottom as needed */
-  right: 30px; /* Adjust the distance from the right as needed */
+  bottom: 90px; 
+  right: 30px; 
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 700px; /* Adjust the chatbot width as needed */
-  height: 400px; /* Adjust the chatbot height as needed */
+  width: 700px; 
+  height: 400px;
   overflow: hidden;
 }
 
 .show-chatbot {
   display: block;
 }
-
 
 /* Footer styles */
 .footer {
