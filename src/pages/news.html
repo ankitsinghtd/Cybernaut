@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybernaut</title>
-    <link rel="stylesheet" id="theme-stylesheet" href="../styles/article.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/news.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <div class="header-container">
             <div class="left-section">
                 <div class="logo">
-                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                    <img src="../images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
                     <h1>Cybernaut</h1>
                 </div>
             </div>
@@ -21,9 +21,9 @@
                 <div class="dropdown">
                     <button class="menu-buttons">Tools &#9662;</button>
                     <div class="dropdown-content">
-                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
-                        <a href="/src/pages/webstructure.html">Website Structure</a>
-                        <a href="/src/pages/filescan.html">Scan a File</a>
+                        <a href="../pages/netanalysishome.html">Network Analysis</a>
+                        <a href="../pages/webstructure.html">Website Structure</a>
+                        <a href="../pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -40,24 +40,24 @@
             </div>
         </div>
     </header>
-    <script src="../scripts/theme.js"></script>
-<main>
-    <header>
-            <h1>Article Showcase</h1>
-    <div class="container">
-        <div class="article1">
-            <h2>Article 1: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
+    <!-- <script src="../scripts/index.js"></script> -->
+    <script src="../scripts/news.js"></script>
+    <main>
+        <div class="cards-container" id="cards-container"></div>
+    </main>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <a href="#" id="news-link" target="_blank">
+                <img src="../images/spyder.png" id="news-image">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">this is the title</h3>
+                <h6 class="news-source" id="news-source">Source</h6>
+                <p class="news-desc" id="news-desc">Lorem Ipsum</p>
+            </div>
         </div>
-        <div class="article2">
-            <h2>Article 2: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
-        </div>
-        <div class="article3">
-            <h2>Article 3: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
-        </div>
-    </div>
-</main>
+    </template>
 </body>
 </html>
