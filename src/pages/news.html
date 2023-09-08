@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernaut</title>
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/news.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-section">
+                <div class="logo">
+                    <img src="../images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                    <h1>Cybernaut</h1>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="dropdown">
+                    <button class="menu-buttons">Tools &#9662;</button>
+                    <div class="dropdown-content">
+                        <a href="../pages/netanalysishome.html">Network Analysis</a>
+                        <a href="../pages/webstructure.html">Website Structure</a>
+                        <a href="../pages/filescan.html">Scan a File</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="menu-buttons">Services &#9662;</button>
+                    <div class="dropdown-content">
+                        <a href="/articles.html">Articles</a>
+                        <a href="/blog.html">Blog</a>
+                        <a href="/news.html">News</a>
+                    </div>
+                </div>
+                <a href="/about.html" class="menu-buttons">About</a>
+                <a href="/index.html" class="menu-buttons">Contact Us</a>
+                <button id="theme-toggle">Dark/Light</button>
+            </div>
+        </div>
+    </header>
+    <!-- <script src="../scripts/index.js"></script> -->
+    <script src="../scripts/news.js"></script>
+    <main>
+        <div class="cards-container" id="cards-container"></div>
+    </main>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <a href="#" id="news-link" target="_blank">
+                <img src="../images/spyder.png" id="news-image">
+                </a>
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">this is the title</h3>
+                <h6 class="news-source" id="news-source">Source</h6>
+                <p class="news-desc" id="news-desc">Lorem Ipsum</p>
+            </div>
+        </div>
+    </template>
+</body>
+</html>
