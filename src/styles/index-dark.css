@@ -4,7 +4,6 @@ html {
 
 /* Reset styles and common styles */
 
-
 body {
   font-family: sans-serif;
   margin: 0;
@@ -21,13 +20,11 @@ body {
   left: 0;
   right: 0;
   background: linear-gradient(180deg, purple, darkblue);
-  /* Adjust gradient colors */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7px;
   background-color: #007bff;
-  /* Fallback color for older browsers */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   color: white;
   border-radius: 15px;
@@ -51,6 +48,8 @@ body {
 
 .logo img {
   margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .logo h1 {
@@ -72,6 +71,28 @@ body {
   background: linear-gradient(180deg, #e378f8, #007bff);
   box-shadow: 7px 6px 7px #125eae;
   transition: all 0.3s ease;
+  margin-left: 2px;
+  position: relative;
+}
+
+.menu-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.menu-buttons:hover::before {
+  border-color: limegreen;
+}
+
+.menu-buttons:active::before {
+  border-color: limegreen;
 }
 
 .menu-buttons:hover {
@@ -87,6 +108,7 @@ body {
   font-size: 16px;
   color: #007bff;
   transition: color 0.3s ease;
+  margin-left: 10px;
 }
 
 /* Dropdown styling */
@@ -213,6 +235,7 @@ body {
 }
 
 /* Style for the "How Cybernaut Works" section */
+
 .how-it-works {
   background-color: #333; 
   padding: 50px 0;
@@ -223,7 +246,7 @@ body {
 
 .how-it-works h2 {
   font-size: 28px;
-  color: #007bff;
+  color: #2a78ca;
   margin-bottom: 20px;
 }
 
