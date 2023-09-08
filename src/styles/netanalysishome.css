@@ -287,3 +287,56 @@ input:focus {
 .cta-button:hover {
     background-color: rgb(165, 11, 165);
 }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.table {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.chart {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.empty-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.summary {
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
