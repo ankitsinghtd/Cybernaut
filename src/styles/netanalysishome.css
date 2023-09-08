@@ -9,6 +9,7 @@ html {
     padding: 0;
     background-color: #fafafa;
     padding-top: 60px;
+    text-align: center;
   }
   body.dark {
     font-family: sans-serif;
@@ -16,6 +17,7 @@ html {
     padding: 0;
     background-color: black;
     padding-top: 60px;
+    text-align: center;
   }
   /* Header styles */
   
@@ -312,31 +314,3 @@ body {
   gap: 20px;
 }
 
-.table {
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-.chart {
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-.empty-container {
-  flex: 1;
-  min-width: 300px;
-}
-
-.summary {
-  width: 100%;
-  padding: 20px;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}

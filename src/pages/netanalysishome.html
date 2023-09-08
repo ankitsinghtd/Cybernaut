@@ -3,24 +3,8 @@
 
 <head>
     <title>Network Analysis</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/src/styles/netanalysishome.css">
     <script src="../scripts/domain.js" defer></script>
-    <style>
-        /* Additional styling for the second table */
-        .table2 {
-            display: none;
-            float: right;
-            width: 45%;
-            /* Adjust the width as needed */
-            margin-top: 20px;
-            /* Add some margin to separate it from the first table */
-        }
-
-        .table2 h2 {
-            font-size: 24px;
-        }
-    </style>
 </head>
 
 <body>
@@ -84,149 +68,12 @@
             <input type="text" id="urltoscan" placeholder="Enter a URL">
             <a href="#" class="scan-button" id="scan-button"><b>Scan URL</b></a>
         </div>
+        <!-- "Scan Another" Button (initially hidden) -->
+        <div class="scan-another-button" style="display: none;">
+            <a href="#" class="cta-button" id="scan-another-button"><b>Scan Another</b></a>
+        </div>
     </main>
     <div class="result-container"></div>
-    <!-- DNS Records Table (initially hidden) -->
-    <div class="table" style="display: none;">
-        <h2>DNS Records</h2>
-        <table id="dnsTable">
-            <!-- Example table structure -->
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Value</th>
-                    <th>TTL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example table data -->
-                <tr>
-                    <td>A</td>
-                    <td>192.168.1.1</td>
-                    <td>3600</td>
-                </tr>
-                <tr>
-                    <td>MX</td>
-                    <td>mail.example.com</td>
-                    <td>7200</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Second Table (initially hidden) -->
-    <div class="table2" style="display: none;">
-        <h2>Table 2</h2>
-        <table id="table2">
-            <!-- Example table structure -->
-            <thead>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example table data -->
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                </tr>
-                <tr>
-                    <td>Data 1</td>
-                    <td>Data 2</td>
-                    <td>Data 3</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Popularity Chart (initially hidden) -->
-    <div class="chart" style="display: none;">
-        <h2>Popularity Ranks</h2>
-        <canvas id="popularityChart" width="100" height="100"></canvas>
-    </div>
-
-    <!-- Summary Section (initially hidden) -->
-    <div class="summary" style="display: none;">
-        <h2>Summary</h2>
-        <p>Summary content goes here...</p>
-    </div>
-
-    <!-- "Scan Another" Button (initially hidden) -->
-    <div class="scan-another-button" style="display: none;">
-        <a href="#" class="cta-button" id="scan-another-button"><b>Scan Another</b></a>
-    </div>
-
-    <!-- Include your JavaScript for handling the scan button click and displaying data -->
-    <script>
-        // JavaScript to populate and display the pie chart using Chart.js
-        const ctx = document.getElementById('popularityChart').getContext('2d');
-        const data = {
-            labels: ['Harmless', 'Malicious', 'Suspicious', 'Undetected', 'Timeout'],
-            datasets: [{
-                data: [72, 0, 0, 16, 0],
-                backgroundColor: ['green', 'red', 'orange', 'gray', 'yellow'],
-            }],
-        };
-
-        const chart = new Chart(ctx, {
-            type: 'pie',
-            data: data,
-        });
-
-        // JavaScript to handle the "Scan Another" button click
-        const scanButton = document.getElementById('scan-button');
-        scanButton.addEventListener('click', function () {
-            // Fetch and process JSON data (as shown in previous responses)
-
-            // Once you have the data, populate the tables and charts
-            const dnsTableDiv = document.querySelector('.table');
-            const chartDiv = document.querySelector('.chart');
-            const summaryDiv = document.querySelector('.summary');
-            const scanAnotherButtonDiv = document.querySelector('.scan-another-button');
-
-            dnsTableDiv.style.display = 'block'; // Show DNS table
-            chartDiv.style.display = 'block';     // Show chart
-            summaryDiv.style.display = 'block';   // Show summary
-            scanAnotherButtonDiv.style.display = 'block'; // Show "Scan Another" button
-
-            // Change the button text and functionality to return to the initial page
-            scanButton.textContent = 'Scan Another';
-
-            // Add event listener for "Scan Another" button
-            scanButton.removeEventListener('click', arguments.callee); // Remove previous click listener
-            scanButton.addEventListener('click', function () {
-                // Clear the tables, chart, summary, and hide "Scan Another" button
-                dnsTableDiv.style.display = 'none'; // Hide DNS table
-                chartDiv.style.display = 'none';     // Hide chart
-                summaryDiv.style.display = 'none';   // Hide summary
-                scanAnotherButtonDiv.style.display = 'none'; // Hide "Scan Another" button
-
-                // Change scan button text back to "Scan URL"
-                scanButton.textContent = 'Scan URL';
-
-                // Re-add the event listener to initiate a new scan
-                scanButton.removeEventListener('click', arguments.callee); // Remove previous click listener
-                scanButton.addEventListener('click', function () {
-                    // Trigger a new scan or navigate to the initial page as needed
-                    // ...
-
-                    // Additionally, reset the pie chart to its original data
-                    chart.data.datasets[0].data = [72, 0, 0, 16, 0];
-                    chart.update(); // Update the chart with new data
-                });
-            });
-        });
-    </script>
-
-    </main>
-
-    <!-- ... (Your footer section remains the same) ... -->
-
 </body>
 
 </html>
