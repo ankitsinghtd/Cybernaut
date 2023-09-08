@@ -4,6 +4,7 @@
 <head>
     <title>Network Analysis</title>
     <link rel="stylesheet" href="/src/styles/netanalysishome.css">
+    <script src="../scripts/domain.js" defer></script>
 </head>
 
 <body>
@@ -68,102 +69,7 @@
             <a href="#" class="scan-button" id="scan-button"><b>Scan URL</b></a>
         </div>
     </main>
-    <main>
-        <div class="table" style="display: none;">
-            <h2>DNS Records</h2>
-            <table id="dnsTable">
-                <!-- ... Table structure ... -->
-            </table>
-            <script>
-                const jsonData = {
-                    "data": {
-                        "attributes": {
-                            // ... your JSON data ...
-                        }
-                    }
-                };
-
-                // Function to populate the DNS records table
-                function populateDnsTable(data) {
-                    const dnsTable = document.getElementById('dnsTable');
-                    const tbody = dnsTable.getElementsByTagName('tbody')[0];
-
-                    for (const record of data.attributes.last_dns_records) {
-                        const row = tbody.insertRow();
-                        const typeCell = row.insertCell(0);
-                        const valueCell = row.insertCell(1);
-                        const ttlCell = row.insertCell(2);
-
-                        typeCell.textContent = record.type;
-                        valueCell.textContent = record.value;
-                        ttlCell.textContent = record.ttl;
-                    }
-                }
-            </script>
-        </div>
-
-        <!-- Popularity Chart (initially hidden) -->
-        <div class="chart" style="display: none;">
-            <h2>Popularity Ranks</h2>
-            <canvas id="popularityChart" width="400" height="400"></canvas>
-            <script>
-                // HTML: <canvas id="myPieChart" width="400" height="400"></canvas>
-
-                // JavaScript:
-                const ctx = document.getElementById('myPieChart').getContext('2d');
-                const data = {
-                    labels: ['Harmless', 'Malicious', 'Suspicious', 'Undetected', 'Timeout'],
-                    datasets: [{
-                        data: [72, 0, 0, 16, 0],
-                        backgroundColor: ['green', 'red', 'orange', 'gray', 'yellow'],
-                    }],
-                };
-
-                new Chart(ctx, {
-                    type: 'pie',
-                    data: data,
-                });
-
-            </script>
-        </div>
-        <script>
-            document.getElementById('scan-button').addEventListener('click', function () {
-                // Replace 'scanButton' with the actual ID of your scan button
-
-                // Fetch and process JSON data (as shown in previous response)
-
-                // Once you have the data and have populated the tables and charts, show them:
-                const dnsTableDiv = document.querySelector('.table');
-                const chartDiv = document.querySelector('.chart');
-
-                dnsTableDiv.style.display = 'block'; // Show DNS table
-                chartDiv.style.display = 'block';     // Show chart
-
-                // Change button text and add functionality to return to the initial page
-                this.textContent = 'Scan Another'; // Change button text
-
-                // Add event listener for "Scan Another" button
-                this.removeEventListener('click', arguments.callee); // Remove previous click listener
-                this.addEventListener('click', function () {
-                    // Clear the tables and charts
-                    dnsTableDiv.style.display = 'none'; // Hide DNS table
-                    chartDiv.style.display = 'none';     // Hide chart
-
-                    // Change button text back to "Scan URL"
-                    this.textContent = 'Scan URL';
-
-                    // Re-add the event listener to initiate a new scan
-                    this.removeEventListener('click', arguments.callee); // Remove previous click listener
-                    this.addEventListener('click', function () {
-                        // Trigger a new scan or navigate to the initial page as needed
-                        // ...
-                    });
-                });
-            });
-
-
-        </script>
-    </main>
+    <div id="result-container"></div>
     <footer>
     </footer>
 </body>
