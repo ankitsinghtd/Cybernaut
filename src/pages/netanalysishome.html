@@ -3,6 +3,7 @@
 
 <head>
     <title>Network Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="/src/styles/netanalysishome.css">
     <script src="../scripts/domain.js" defer></script>
 </head>
@@ -42,8 +43,14 @@
     </header>
     <script src="src/scripts/theme.js"></script>
     <main>
+
         <div class="introduction">
             <p>Welcome to Cybernaut's Network Analysis tool. Here's something to get you started:</p>
+        </div>
+                
+        <div class="search-container">
+            <input type="text" id="urltoscan" placeholder="Enter a URL">
+            <a href="#report-page-anchor" class="scan-button" id="scan-button"><b>Scan URL</b></a>
         </div>
 
         <div class="description">
@@ -55,22 +62,77 @@
             </div>
             <div class="card">
                 <h2 class="card-title">How the Report Is Generated</h2>
-                <p class="card-text">After you initiate a scan, our tool will analyze various aspects of the website,
+                <p class="card-text" id="report-page-anchor">After you initiate a scan, our tool will analyze various aspects of the website,
                     including its load time, security vulnerabilities, and network structure. The results will be
                     compiled into a comprehensive report, giving you insights into the website's performance and
                     potential issues.</p>
             </div>
         </div>
-        <div class="get-started-button">
-            <a href="#urltoscan" class="cta-button">Get Started</a>
+
+        <div class="table-container">
+            <table id="dns-records" class="hidden">
+                <caption>DNS Records</caption>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>IP Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>example.com</td>
+                        <td>192.168.1.1</td>
+                    </tr>
+                    <tr>
+                        <td>google.com</td>
+                        <td>172.217.168.110</td>
+                    </tr>
+                    <tr>
+                        <td>yahoo.com</td>
+                        <td>98.137.11.163</td>
+                    </tr>
+                    <tr>
+                        <td>facebook.com</td>
+                        <td>31.13.78.35</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="network-statistics" class="hidden">
+                <caption>Network Statistics</caption>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Packets Sent</td>
+                        <td>1024</td>
+                    </tr>
+                    <tr>
+                        <td>Packets Received</td>
+                        <td>768</td>
+                    </tr>
+                    <tr>
+                        <td>Latency</td>
+                        <td>35 ms</td>
+                    </tr>
+                    <tr>
+                        <td>Bandwidth</td>
+                        <td>50 Mbps</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="search-container">
-            <input type="text" id="urltoscan" placeholder="Enter a URL">
-            <a href="#" class="scan-button" id="scan-button"><b>Scan URL</b></a>
-        </div>
-        <!-- "Scan Another" Button (initially hidden) -->
-        <div class="scan-another-button" style="display: none;">
-            <a href="#" class="cta-button" id="scan-another-button"><b>Scan Another</b></a>
+
+        <canvas id="pie-chart" class ="hidden" width = "1000" height = "500" style="margin-top: 80px;"></canvas>
+        
+        <div id="summary-box" class="hidden">
+            <h2>Summary</h2>
+            <p>This is a summary of the network analysis results.</p>
+        
         </div>
     </main>
     <div class="result-container"></div>
