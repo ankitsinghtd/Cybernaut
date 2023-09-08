@@ -3,13 +3,15 @@ html {
 }
 
 /* Reset styles and common styles */
+
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #2b2b2b;
   padding-top: 60px;
 }
+
 body.dark {
   font-family: sans-serif;
   margin: 0;
@@ -17,6 +19,7 @@ body.dark {
   background-color: black;
   padding-top: 60px;
 }
+
 /* Header styles */
 
 .header-container {
@@ -24,14 +27,12 @@ body.dark {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, #e378f8, #007bff);
+  background: linear-gradient(180deg, #333, #007bff);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7px;
-  background-color: #007bff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  color: white;
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
   z-index: 100;
@@ -53,9 +54,12 @@ body.dark {
 
 .logo img {
   margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .logo h1 {
+  color: #fff;
   margin: 0;
   font-size: 24px;
 }
@@ -74,20 +78,44 @@ body.dark {
   background: linear-gradient(180deg, #e378f8, #007bff);
   box-shadow: 7px 6px 7px #125eae;
   transition: all 0.3s ease;
+  margin-left: 2px;
+  position: relative;
+}
+
+.menu-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.menu-buttons:hover::before {
+  border-color: limegreen;
+}
+
+.menu-buttons:active::before {
+  border-color: limegreen;
 }
 
 .menu-buttons:hover {
   opacity: 1;
   box-shadow: 0 0 5px #2e7eda, 0 0 15px #70aaec, 0 0 15px #e631dd, 0 0 15px #0b5fbe;
 }
+
 #theme-toggle {
-  background-color: whi;
+  background-color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
   font-size: 16px;
-  color: #007bff; /* Light theme color */
+  color: #007bff;
   transition: color 0.3s ease;
+  margin-left: 10px;
 }
 
 /* Dropdown styling */
@@ -125,12 +153,12 @@ body.dark {
 }
 
 .dropdown-content a:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .dropdown button.menu-buttons {
-  padding: 10px 20px; 
-  font-size: 15px; 
+  padding: 10px 20px;
+  font-size: 15px;
 }
 
 /* Hero section styles */
@@ -138,21 +166,23 @@ body.dark {
 .hero-section {
   background-size: cover;
   background-position: center;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 100px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .hero-card {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #797676b3;
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
+  background-color: #555454b3;
+  border-radius: 10px;
   padding: 5% 10%;
 }
 
@@ -167,7 +197,7 @@ body.dark {
   color: #fff;
   font-size: 18px;
   margin-bottom: 20px;
-  line-height: 2; 
+  line-height: 2;
   opacity: 1;
 }
 
@@ -194,44 +224,50 @@ body.dark {
 /* Style for the "What We Do" section */
 
 .what-we-do {
-  background-color: #f9f9f9;
-  padding: 50px 0;
+  background-color: #797676b3;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .what-we-do h2 {
   font-size: 28px;
-  color: #007bff;
-  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .what-we-do p {
   font-size: 18px;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 20px;
+}
+
+.section-separator {
+  color: hsl(0, 4%, 78%); 
+  border-top: 1px solid #ddd;
+  margin: 0px auto;
+  width: 80%;
 }
 
 /* Style for the "How Cybernaut Works" section */
 
 .how-it-works {
-  background-color: #f9f9f9;
+  background-color: #797676b3;
   padding: 50px 0;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .how-it-works h2 {
   font-size: 28px;
-  color: #007bff;
-  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .how-it-works p {
   font-size: 18px;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -272,6 +308,7 @@ body.dark {
 }
 
 /* Footer styles */
+
 .footer {
   background-color: #007bff;
   padding: 1px;
@@ -284,7 +321,8 @@ body.dark {
 
 /* Footer link styles */
 .powered-by-link {
-  color: #fafafa;
+  color: #fff;
+  /* White text */
   text-decoration: none;
   margin: 5px;
   display: block;
@@ -298,25 +336,26 @@ body.dark {
 
 @media (max-width: 768px) {
   .header-container {
-      padding: 5px;
+    padding: 5px;
   }
 
   .menu-buttons {
-      padding: 8px 16px;
-      font-size: 14px;
+    padding: 8px 16px;
+    font-size: 14px;
   }
 
 }
 
 @media (max-width: 480px) {
+
   /* Adjust styles here */
   .header-container {
-      padding: 3px;
+    padding: 3px;
   }
 
   .menu-buttons {
-      padding: 5px 10px;
-      font-size: 12px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
 
 }

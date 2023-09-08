@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybernaut</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" id="theme-stylesheet" href="src/styles/index.css">
 </head>
 
@@ -18,24 +21,33 @@
                 </div>
             </div>
             <div class="right-section">
-                <a href="/index.html" class="menu-buttons">Home</a>
+                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
                 <div class="dropdown">
-                    <button class="menu-buttons">Tools &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
                         <a href="/src/pages/netanalysishome.html">Network Analysis</a>
                         <a href="/src/pages/webstructure.html">Website Structure</a>
                         <a href="/src/pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
+
                 <div class="dropdown">
-                    <button class="menu-buttons">Services &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
                         <a href="/src/pages/article.html">Articles</a>
                         <a href="/blog.html">Blog</a>
                         <a href="/src/pages/news.html">News</a>
                     </div>
                 </div>
-                <a href="/index.html" class="menu-buttons">Contact Us</a>
+                
+                <a href="/index.html" class="menu-buttons contact-us-button">
+                    <i class="fas fa-envelope"> Contact Us </i>
+                </a>
+                
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
@@ -65,15 +77,20 @@
                 <br>
                 <p>• Network Analysis: Gain insights into network performance and statistics.</p>
                 <p>• Scan a File: Securely scan files via upload or hash.</p>
-                <p>• Content: Find latest and easy to understand articles and blogs on</p> 
+                <p>• Content: Find latest and easy to understand articles and blogs on</p>
                 <p> hot topics in the domain of Cyber Security.</p>
             </div>
         </section>
-    
+
+        <div class="section-separator">
+            <br>
+        </div>
+
         <section class="how-it-works" id="scroll-target">
             <div class="section-content">
                 <h2>How Cybernaut Works</h2>
-                <p>Cybernaut uses VirusTotal API to fetch security related information regarding the provided domain.</p>
+                <p>Cybernaut uses VirusTotal API to fetch security related information regarding the provided domain.
+                </p>
                 <p>We handle the end-points and data visualizations so you can focus on:</p>
                 <br>
                 <p>• Choosing a Service: Pick from our suite of services tailored to your needs.</p>
@@ -81,16 +98,16 @@
                 <p>• Secure Your Digital Space: Protect your online presence with confidence.</p>
             </div>
         </section>
-    
+
         <div class="chatbot">
             <script type='module'
                 src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
             <zapier-interfaces-page-embed page-id='clm6evwsq131660pmnfc1m4o3q' no-background='false'
                 style='max-width: 900px; height: 500px;'></zapier-interfaces-page-embed>
         </div>
-    
+
     </main>
-    
+
     <div class="chatbot-button" id="chatbot-toggle">
         <img src="/src/images/chatbot-icon.png" alt="Chatbot Icon" height="70" width="70">
     </div>
@@ -107,7 +124,7 @@
             <a href="https://virustotal.com/gui/" target="_main" class="powered-by-link"> Powered By VirusTotal</a>
         </div>
     </footer>
-    
+
 </body>
 
 </html>
