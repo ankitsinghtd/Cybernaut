@@ -11,11 +11,9 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="left-section">
-                <div class="logo">
-                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
-                    <h1>Cybernaut</h1>
-                </div>
+            <div class="logo">
+                <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                <h1>Cybernaut</h1>
             </div>
             <div class="right-section">
                 <div class="dropdown">
@@ -29,35 +27,64 @@
                 <div class="dropdown">
                     <button class="menu-buttons">Services &#9662;</button>
                     <div class="dropdown-content">
-                        <a href="/articles.html">Articles</a>
-                        <a href="/blog.html">Blog</a>
-                        <a href="/news.html">News</a>
+                        <a href="/src/pages/article.html">Articles</a>
+                        <a href="/src/pages/article.html">Blog</a>
+                        <a href="/src/pages/article.html">News</a>
                     </div>
                 </div>
-                <a href="/about.html" class="menu-buttons">About</a>
+                <a href="/index.html" class="menu-buttons">Home</a>
                 <a href="/index.html" class="menu-buttons">Contact Us</a>
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
     </header>
-    <script src="../scripts/theme.js"></script>
-<main>
-    <header>
-            <h1>Article Showcase</h1>
-    <div class="container">
-        <div class="article1">
-            <h2>Article 1: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
+    <script src="src/scripts/theme.js"></script>
+    <main>
+        <header>
+            <h1 style="font-size: 36px";>Article Showcase</h1>
+        </header>
+        <div class="container">
+            <div class="article">
+                <div class="article1">
+                    <h2>Article 1: Title</h2>
+                    <p>Add appropriate description here. <a href="#">Read more</a></p>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article2">
+                    <h2>Article 2: Title</h2>
+                    <p>Add appropriate description here. <a href="#">Read more</a></p>
+                </div>
+            </div>
+            <div class="article">
+                <div class="article3">
+                    <h2>Ethics and Laws of Cyber Security</h2>
+                    <p>Add appropriate description here. <a href="/src/pages/articles/ethicsandlaw.html">Read more</a></p>
+                </div>
+            </div>
         </div>
-        <div class="article2">
-            <h2>Article 2: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
-        </div>
-        <div class="article3">
-            <h2>Article 3: Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more</a></p>
-        </div>
-    </div>
-</main>
+    </main>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const articles = document.querySelectorAll(".article");
+
+  articles.forEach((article) => {
+    article.addEventListener("mousemove", (e) => {
+      const xPos = (e.clientX - article.getBoundingClientRect().left) / article.clientWidth;
+      const yPos = (e.clientY - article.getBoundingClientRect().top) / article.clientHeight;
+
+      article.style.setProperty("--gradientX", xPos);
+      article.style.setProperty("--gradientY", yPos);
+    });
+
+    article.addEventListener("mouseleave", () => {
+      article.style.setProperty("--gradientX", 0.5);
+      article.style.setProperty("--gradientY", 0.5);
+    });
+  });
+});
+
+</script>
+
 </html>
