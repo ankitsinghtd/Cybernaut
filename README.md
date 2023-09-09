@@ -1,5 +1,2 @@
 # Cybernaut
-Web Interface (no functionality) for Cybernaut, a web spyder.
-
-Find functional bot here:
-https://github.com/JhonnyVadapav/Crawler
+A previous web spyder, now a Cyber Security Platform to keep yourself updated with latest news, articles and blogs, tools to secure your online presence.
