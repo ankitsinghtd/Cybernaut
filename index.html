@@ -16,12 +16,12 @@
         <div class="header-container">
             <div class="left-section">
                 <div class="logo">
-                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                    <img src="./src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
                     <h1>Cybernaut</h1>
                 </div>
             </div>
             <div class="right-section">
-                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
+                <a href="./index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
                 <div class="dropdown">
                     <a href="#" class="menu-buttons">
                         <i class="fas fa-wrench"> Tools &#9662;</i>
@@ -38,13 +38,13 @@
                         <i class="fas fa-cogs"> Services &#9662;</i>
                     </a>
                     <div class="dropdown-content">
-                        <a href="/src/pages/article.html">Articles</a>
-                        <a href="/blog.html">Blog</a>
-                        <a href="/src/pages/news.html">News</a>
+                        <a href="./src/pages/article.html">Articles</a>
+                        <a href="./blog.html">Blog</a>
+                        <a href="./src/pages/news.html">News</a>
                     </div>
                 </div>
                 
-                <a href="/index.html" class="menu-buttons contact-us-button">
+                <a href="./index.html" class="menu-buttons contact-us-button">
                     <i class="fas fa-envelope"> Contact Us </i>
                 </a>
                 
@@ -52,19 +52,16 @@
             </div>
         </div>
     </header>
-    <script src="src/scripts/index.js"></script>
-    <div class="hero-section">
-        <div class="hero-card">
-            <div class="hero-content">
-                <h1>Welcome to Cybernaut</h1>
-                <p>Cybernaut will help you navigate the intricate landscape of the digital world with confidence and
-                    security. Our suite of innovative tools and services empowers you to explore, analyze, and safeguard
-                    your digital experiences. Whether you're a security enthusiast, a web developer, or simply curious
-                    about the depths of cyberspace, Cybernaut has you covered.</p>
-                <div class="get-started-button">
-                    <a href="#scroll-target" class="cta-button">Get Started</a>
-                </div>
-            </div>
+    <script src="./src/scripts/index.js" defer></script>
+    <div class="container">
+        <div class="arrow left" onclick="handleClick('left')">
+            <div class="icon">&lt;</div>
+        </div>
+        <div class="wrapper" id="slider-wrapper">
+            <!-- Slide items will be added here using JavaScript -->
+        </div>
+        <div class="arrow right" onclick="handleClick('right')">
+            <div class="icon">&gt;</div>
         </div>
     </div>
 
@@ -109,7 +106,7 @@
     </main>
 
     <div class="chatbot-button" id="chatbot-toggle">
-        <img src="/src/images/chatbot-icon.png" alt="Chatbot Icon" height="70" width="70">
+        <img src="./src/images/chatbot-icon.png" alt="Chatbot Icon" height="70" width="70">
     </div>
     <script>
         const chatbotButton = document.getElementById("chatbot-toggle");
