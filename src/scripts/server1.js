@@ -1,8 +1,7 @@
+// server.js
 const express = require('express');
-const path = require('path');
-const checker = require("./checker.js"); // Import the entire module
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../')));
@@ -11,7 +10,7 @@ app.post('/domain', async (req, res) => {
     try {
         const mainUrl = req.body.Domain;
         const url = new URL(mainUrl);
-        const domain = url.hostname ;
+        const domain = url.hostname;
         if (!mainUrl) {
             return res.status(400).json();
         }
@@ -21,10 +20,15 @@ app.post('/domain', async (req, res) => {
     } catch (err) {
         console.log(`Error in reporting ${err.message}`);
         console.log(err);
-        res.status(500).json({ error: "an issues is arising during scan" }); // Send an error response
+        res.status(500).json({ error: "an issue is arising during scan" }); // Send an error response
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on ${port}`);
-});
+// Listen for incoming requests only if not in a serverless environment
+if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    app.listen(port, () => {
+        console.log(`Server is running on ${port}`);
+    });
+}
+
+module.exports = app; // Export the Express.js app
