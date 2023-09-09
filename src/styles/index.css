@@ -8,15 +8,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #2b2b2b;
-  padding-top: 60px;
-}
-
-body.dark {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: black;
+  background-color: white;
   padding-top: 60px;
 }
 
@@ -27,7 +19,7 @@ body.dark {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, #333, #007bff);
+  background: linear-gradient(90deg, #acebf2, #013a40);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +67,7 @@ body.dark {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(180deg, #e378f8, #007bff);
+  background: linear-gradient(180deg, #04d9d9, #007bff);
   box-shadow: 7px 6px 7px #125eae;
   transition: all 0.3s ease;
   margin-left: 2px;
@@ -163,70 +155,110 @@ body.dark {
 
 /* Hero section styles */
 
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-  padding: 100px 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.hero-card {
-  background-color: #797676b3;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  background-color: #555454b3;
-  border-radius: 10px;
-  padding: 5% 10%;
-}
-
-.hero-content h1 {
-  color: #fff;
-  font-size: 28px;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.hero-content p {
-  color: #fff;
-  font-size: 18px;
-  margin-bottom: 20px;
-  line-height: 2;
-  opacity: 1;
-}
-
-.get-started-button {
+.container {
+  width: 100%;
+  height: 100vh;
   display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #fff7f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+  color: #1eb2a6;
+  cursor: pointer;
+  z-index: 2;
 }
 
-.cta-button {
-  background-color: #007bff;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background-color 0.6s ease;
+.left {
+  left: 10px;
 }
 
-.cta-button:hover {
-  background-color: rgb(165, 11, 165);
+.right {
+  right: 10px;
 }
+
+.icon {
+  font-size: 24px;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  transition: all 0.8s ease;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.info-container {
+  padding: 0 7%;
+}
+
+.subtitle {
+  margin: 2% 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1eb2a6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.content {
+  padding-top: 2%;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.button {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 17px 30px;
+  background-color: #1eb2a6;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  margin: 30px 10px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 24px 36px -11px rgb(0 0 0 / 9%);
+  transition: 0.5s;
+}
+
 
 
 /* Style for the "What We Do" section */
 
 .what-we-do {
-  background-color: #797676b3;
-  border-radius: 10px;
-  padding: 10px;
+  background-color: #797676b3;  
+  padding: 30px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0;
@@ -235,6 +267,7 @@ body.dark {
 .what-we-do h2 {
   font-size: 28px;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .what-we-do p {
@@ -257,12 +290,13 @@ body.dark {
   padding: 50px 0;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0;
+  border-radius: 10px;
 }
 
 .how-it-works h2 {
   font-size: 28px;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .how-it-works p {

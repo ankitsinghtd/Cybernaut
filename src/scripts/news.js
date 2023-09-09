@@ -25,11 +25,13 @@
         const newsSrc=cardClone.querySelector("#news-source");
         const newsDesc=cardClone.querySelector("#news-desc");
         const newsLink=cardClone.querySelector("#news-link");
+        const newsHlink=cardClone.querySelector("#news-h-link");
         
         newsImg.src=articles.urlToImage;
         newsTitle.innerHTML=articles.title;
         newsDesc.innerHTML=articles.description;
         newsLink.href=articles.url;
+        newsHlink.href=articles.url;
 
         const date=new Date(articles.publishedAt).toLocaleString("en-US",{
             timeZone: "Asia/Jakarta"

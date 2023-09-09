@@ -4,7 +4,7 @@
 <head>
     <title>Network Analysis</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <link rel="stylesheet" href="/src/styles/netanalysishome.css">
+    <link rel="stylesheet" href="../styles/netanalysishome.css">
     <script src="../scripts/domain.js" defer></script>
 </head>
 
@@ -12,28 +12,28 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                <img src="../images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
                 <h1>Cybernaut</h1>
             </div>
             <div class="right-section">
-                <a href="/index.html" class="menu-buttons">Home</a>
+                <a href="../../index.html" class="menu-buttons">Home</a>
                 <div class="dropdown">
                     <button class="menu-buttons">Tools &#9662;</button>
                     <div class="dropdown-content">
-                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
-                        <a href="/src/pages/webstructure.html">Website Structure</a>
-                        <a href="/src/pages/filescan.html">Scan a File</a>
+                        <a href="../pages/netanalysishome.html">Network Analysis</a>
+                        <a href="../pages/webstructure.html">Website Structure</a>
+                        <a href="../pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button class="menu-buttons">Services &#9662;</button>
                     <div class="dropdown-content">
-                        <a href="/src/pages/article.html">Articles</a>
-                        <a href="/src/pages/article.html">Blog</a>
-                        <a href="/src/pages/news.html">News</a>
+                        <a href="../pages/article.html">Articles</a>
+                        <a href="../pages/article.html">Blog</a>
+                        <a href="../pages/news.html">News</a>
                     </div>
                 </div>
-                <a href="/index.html" class="menu-buttons">Contact Us</a>
+                <a href="../index.html" class="menu-buttons">Contact Us</a>
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
@@ -73,26 +73,51 @@
                 <caption>DNS Records</caption>
                 <thead>
                     <tr>
-                        <th>Domain</th>
-                        <th>IP Address</th>
+                        <th>Vendor</th>
+                        <th>Result</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>example.com</td>
-                        <td>192.168.1.1</td>
+                        <td>AlienVault</td>
+                        <td id="AV">AV</td>
                     </tr>
                     <tr>
-                        <td>google.com</td>
-                        <td>172.217.168.110</td>
+                        <td>Sophos</td>
+                        <td id="SP">SP</td>
                     </tr>
                     <tr>
-                        <td>yahoo.com</td>
-                        <td>98.137.11.163</td>
+                        <td>Bkav</td>
+                        <td id="BV">BV</td>
                     </tr>
                     <tr>
-                        <td>facebook.com</td>
-                        <td>31.13.78.35</td>
+                        <td>VX Vault</td>
+                        <td id="VX">VX</td>
+                    </tr>
+                    <!-- / -->
+                    <tr>
+                        <td>Google SafeBrowsing </td>
+                        <td id="GSB">VX</td>
+                    </tr>
+                    <tr>
+                        <td>Malwared</td>
+                        <td id="MAL">VX</td>
+                    </tr>
+                    <tr>
+                        <td>SOCRadar</td>
+                        <td id="SR">VX</td>
+                    </tr>
+                    <tr>
+                        <td>CrowdSec</td>
+                        <td id="CS">VX</td>
+                    </tr>
+                    <tr>
+                        <td>Kaspersky</td>
+                        <td id="Kas">VX</td>
+                    </tr>
+                    <tr>
+                        <td>EmergingThreats</td>
+                        <td id="ET">VX</td>
                     </tr>
                 </tbody>
             </table>
@@ -130,8 +155,7 @@
         
         <div id="summary-box" class="hidden">
             <h2>Summary</h2>
-            <p>This is a summary of the network analysis results.</p>
-        
+            <p id="summary">This is a summary of the network analysis results.</p>
         </div>
     </main>
     <div id="result-container"></div>
