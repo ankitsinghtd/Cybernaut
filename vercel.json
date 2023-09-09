@@ -2,7 +2,8 @@
     "version":2,
     "builds":[
         {
-            "src":"./index.html"
+            "src":"src/scripts/server1.js",
+            "use":"@vercel/node"
         }
     ],
     "routes":[{
