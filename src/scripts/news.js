@@ -1,4 +1,4 @@
-const apiKey = '_REDACTED_';
+const apiKey = process.env.newsAPI;
 const apiUrl = 'https://newsapi.org/v2/everything?q=';
 const loadingIndicator = document.getElementById("loading-indicator");
 const cardContainer = document.getElementById("cards-container");

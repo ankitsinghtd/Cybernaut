@@ -1,4 +1,4 @@
-const apiKey = '';
+const apiKey = process.env.ktApi;
 
 document.getElementById("scan-button").addEventListener('click', async function () {
     const baseUrl = document.getElementById("urltoscan").value;
