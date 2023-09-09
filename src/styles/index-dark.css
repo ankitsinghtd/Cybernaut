@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #8c8377;
   padding-top: 60px;
 }
 
@@ -19,46 +19,46 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, purple, darkblue);
+  background: linear-gradient(90deg, #3c5973, #0c1726);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 7px;
-  background-color: #007bff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  color: white;
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
   z-index: 100;
+  height: 60px; 
 }
 
 .header-container:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.left-section {
+.logo-container {
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.logo-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #0d0d0d;
+  margin: 0;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo img {
+  margin-top: 20px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.logo h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.right-section {
-  margin-left: auto;
+.menu-container {
+  margin-left: 13%;
 }
 
 .menu-buttons {
@@ -68,8 +68,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(180deg, #e378f8, #007bff);
-  box-shadow: 7px 6px 7px #125eae;
+  background: linear-gradient(90deg, #3f6ca6, #3c5973);
+  box-shadow: 7px 6px 7px #013A40;
   transition: all 0.3s ease;
   margin-left: 2px;
   position: relative;
@@ -88,16 +88,16 @@ body {
 }
 
 .menu-buttons:hover::before {
-  border-color: limegreen;
+  border-color: rgb(62, 238, 62);
 }
 
 .menu-buttons:active::before {
-  border-color: limegreen;
+  border-color: rgb(62, 238, 62);
 }
 
 .menu-buttons:hover {
   opacity: 1;
-  box-shadow: 0 0 5px #2e7eda, 0 0 15px #70aaec, 0 0 15px #e631dd, 0 0 15px #0b5fbe;
+  box-shadow: 0 0 5px #04D9D9, 0 0 15px #04ADBF, 0 0 15px #e631dd, 0 0 15px #ACEBF2;
 }
 
 #theme-toggle {
@@ -121,7 +121,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #cde7eb;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -133,7 +133,7 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
   display: block;
-  color: #333;
+  color: #0d0d0d;
   transition: background-color 0.3s ease;
 }
 
@@ -142,21 +142,21 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #3f6ca6;
 }
 
 .dropdown-content a:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .dropdown button.menu-buttons {
-  padding: 10px 20px; 
-  font-size: 15px; 
+  padding: 10px 20px;
+  font-size: 15px;
 }
 
 /* Hero section styles */
 
-.body, html {
+body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -234,6 +234,7 @@ body {
 }
 
 .content {
+  color: #ACEBF2;
   padding-top: 2%;
   line-height: 30px;
   font-size: 18px;
@@ -243,7 +244,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   padding: 17px 30px;
-  background-color: #1eb2a6;
+  background-color: #3f6ca6;
   color: #fff;
   font-weight: 600;
   border: none;
@@ -253,32 +254,41 @@ body {
   transition: 0.5s;
 }
 
+
+
 /* Style for the "What We Do" section */
 
 .what-we-do {
-  background-color: #333; 
-  padding: 30px 0;
+  background-color: #0c1726;
+  padding: 30px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .what-we-do h2 {
   font-size: 28px;
-  color: #007bff;
+  color: #3f6ca6;
   margin-bottom: 20px;
 }
 
 .what-we-do p {
   font-size: 18px;
-  color: hsl(0, 4%, 78%);
+  color: #3c5973;
   margin-bottom: 20px;
+}
+
+.section-separator {
+  color: hsl(0, 4%, 78%); 
+  border-top: 1px solid #ddd;
+  margin: 0px auto;
+  width: 80%;
 }
 
 /* Style for the "How Cybernaut Works" section */
 
 .how-it-works {
-  background-color: #333; 
+  background-color: #0c1726;
   padding: 50px 0;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -287,13 +297,13 @@ body {
 
 .how-it-works h2 {
   font-size: 28px;
-  color: #2a78ca;
+  color: #3f6ca6;
   margin-bottom: 20px;
 }
 
 .how-it-works p {
   font-size: 18px;
-  color: hsl(0, 4%, 78%);
+  color: #3c5973;
   margin-bottom: 20px;
 }
 
@@ -334,11 +344,12 @@ body {
 }
 
 /* Footer styles */
+
 .footer {
-  background-color: #007bff;
+  background-color: #0d0d0d;
   padding: 1px;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: -5px;
   width: 100%;
   transition: bottom 0.3s ease;
@@ -346,12 +357,42 @@ body {
 
 /* Footer link styles */
 .powered-by-link {
-  color: #fafafa;
+  color: #fff;
+  /* White text */
   text-decoration: none;
   margin: 5px;
   display: block;
 }
 
 .powered-by-link:hover {
+  color: #ffffff;
   text-decoration: underline;
+}
+
+/* responsive stuff */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 5px;
+  }
+
+  .menu-buttons {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  /* Adjust styles here */
+  .header-container {
+    padding: 3px;
+  }
+
+  .menu-buttons {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
 }

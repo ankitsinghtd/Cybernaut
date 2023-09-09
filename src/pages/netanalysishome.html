@@ -2,7 +2,10 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Network Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="../styles/netanalysishome.css">
     <script src="../scripts/domain.js" defer></script>
@@ -11,29 +14,40 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">
-                <img src="../images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
-                <h1>Cybernaut</h1>
+            <div class="logo-container">
+                <h1 class="cybernaut-title">Cybernaut</h1>
             </div>
-            <div class="right-section">
-                <a href="../../index.html" class="menu-buttons">Home</a>
+                <div class="logo">
+                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                </div>
+            <div class="menu-container">
+                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
                 <div class="dropdown">
-                    <button class="menu-buttons">Tools &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
-                        <a href="../pages/netanalysishome.html">Network Analysis</a>
-                        <a href="../pages/webstructure.html">Website Structure</a>
-                        <a href="../pages/filescan.html">Scan a File</a>
+                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
+                        <a href="/src/pages/webstructure.html">Website Structure</a>
+                        <a href="/src/pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
+
                 <div class="dropdown">
-                    <button class="menu-buttons">Services &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
-                        <a href="../pages/article.html">Articles</a>
-                        <a href="../pages/article.html">Blog</a>
-                        <a href="../pages/news.html">News</a>
+                        <a href="/src/pages/article.html">Articles</a>
+                        <a href="./blog.html">Blog</a>
+                        <a href="/src/pages/news.html">News</a>
                     </div>
                 </div>
-                <a href="../index.html" class="menu-buttons">Contact Us</a>
+                
+                <a href="./index.html" class="menu-buttons contact-us-button">
+                    <i class="fas fa-envelope"> Contact Us </i>
+                </a>
+                
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
