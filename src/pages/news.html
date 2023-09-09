@@ -41,10 +41,11 @@
         </div>
     </header>
     <!-- <script src="../scripts/index.js"></script> -->
-    <script src="../scripts/news.js"></script>
     <main>
-        <div class="cards-container" id="cards-container"></div>
+        <div id="loading-indicator" class="loading-indicator">Fetching latest news for you ...</div>
+        <div class="cards-container" id="cards-container" style="display: none;"></div>
     </main>
+    <script src="../scripts/news.js"></script>
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
