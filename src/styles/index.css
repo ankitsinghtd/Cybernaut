@@ -22,42 +22,43 @@ body {
   background: linear-gradient(90deg, #acebf2, #013a40);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center the content horizontally */
   padding: 7px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
   z-index: 100;
+  height: 60px; 
 }
 
 .header-container:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.left-section {
+.logo-container {
   display: flex;
   align-items: center;
+  margin-right: auto; /* Pushes the logo to the right */
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.logo-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #013A40;
+  margin: 0;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo img {
+  margin-top: 20px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.logo h1 {
-  color: #fff;
-  margin: 0;
-  font-size: 24px;
-}
-
-.right-section {
-  margin-left: auto;
+.menu-container {
+  margin-left: 13%;
 }
 
 .menu-buttons {
@@ -67,8 +68,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(180deg, #04d9d9, #007bff);
-  box-shadow: 7px 6px 7px #125eae;
+  background: linear-gradient(90deg, #04D9D9, #025959);
+  box-shadow: 7px 6px 7px #013A40;
   transition: all 0.3s ease;
   margin-left: 2px;
   position: relative;
@@ -87,16 +88,16 @@ body {
 }
 
 .menu-buttons:hover::before {
-  border-color: limegreen;
+  border-color: rgb(62, 238, 62);
 }
 
 .menu-buttons:active::before {
-  border-color: limegreen;
+  border-color: rgb(62, 238, 62);
 }
 
 .menu-buttons:hover {
   opacity: 1;
-  box-shadow: 0 0 5px #2e7eda, 0 0 15px #70aaec, 0 0 15px #e631dd, 0 0 15px #0b5fbe;
+  box-shadow: 0 0 5px #04D9D9, 0 0 15px #04ADBF, 0 0 15px #e631dd, 0 0 15px #ACEBF2;
 }
 
 #theme-toggle {
@@ -120,7 +121,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #cde7eb;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -141,7 +142,7 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #04ADBF;
 }
 
 .dropdown-content a:last-child {
