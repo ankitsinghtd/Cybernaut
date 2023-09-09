@@ -1,6 +1,7 @@
 const apiKey = process.env.newsAPI;
 const apiUrl = 'https://newsapi.org/v2/everything?q=';
 const loadingIndicator = document.getElementById("loading-indicator");
+const loader = document.querySelector(".loader");
 const cardContainer = document.getElementById("cards-container");
 
 window.addEventListener('load', () => {
@@ -27,11 +28,13 @@ async function fetchNews(query) {
 
 function showLoadingIndicator() {
     loadingIndicator.style.display = "block";
+    loader.style.display = "flex";
     cardContainer.style.display = "none";
 }
 
 function hideLoadingIndicator() {
     loadingIndicator.style.display = "none";
+    loader.style.display = "none";
 }
 
 function displayErrorMessage() {
