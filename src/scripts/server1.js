@@ -1,13 +1,20 @@
-const fetch = require('node-fetch');
-const express=require('express');
-require('dotenv').config();
-const path =require('path');
-const checker=require("./checker.js");
-const app=express();
-const port=4000;
+import express from 'express';
+import { config } from 'dotenv';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fetch from 'node-fetch';
+import * as checker from './checker.js';
+
+config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const port = 4000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname,'../../')));
+app.use(express.static(path.join(__dirname, '../../')));
 
 const apiUrl = 'https://newsapi.org/v2/everything?q=';
 
@@ -20,7 +27,7 @@ app.post('/domain',async (req,res)=>{
             return res.status(400).json();
        }
        console.log("Searching about the domain");
-       const record=await checker.domainReport(domain);
+       const record = await checker.domainReport(domain);
        res.json(record);
     }
     catch(err){

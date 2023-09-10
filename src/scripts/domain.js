@@ -1,5 +1,3 @@
-
-const apiKey = 'a519dc83b1df196c8f98158434e7da17c0a5a434581acaedbe2daf8a6cc786d5';
 let analysis;
 document.getElementById("scan-button").addEventListener('click', async function () {
     const mainUrl=document.getElementById('urltoscan').value;

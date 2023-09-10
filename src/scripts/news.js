@@ -1,4 +1,3 @@
-
 const loadingIndicator = document.getElementById("loading-indicator");
 const loader = document.querySelector(".loader");
 const cardContainer = document.getElementById("cards-container");
@@ -18,7 +17,7 @@ async function fetchNews(query) {
         const data = await response.json();
         bindData(data);
     } catch (error) {
-        console.error("Error fetching news:", error);
+        console.log("Error fetching news:", error);
         hideLoadingIndicator();
         displayErrorMessage();
     }
