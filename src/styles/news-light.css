@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #04ADBF;
   padding-top: 60px;
 }
 
@@ -160,7 +160,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #04ADBF;
 }
 
 header {
@@ -169,9 +169,15 @@ header {
     text-align: center;
     padding: 10px 0;
 } 
+
 main{
   padding-block: 20px;
   margin-top: 80px;
+}
+
+.news-header{
+  color: #013a40;
+  text-align: center;
 }
 
 .cards-container {
@@ -186,7 +192,7 @@ main{
   padding: 20px;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #04d9d9;
   overflow: hidden;
   transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
   width: calc(28% - 20px);
@@ -197,7 +203,7 @@ main{
 
 .card:hover{
   box-shadow: 1px 1px 8px #d4ecff;
-  background-color: #f9fdff;
+  background-color: #acebf2;
   transform: translateY(-2px);
 }
 
@@ -212,7 +218,14 @@ main{
 }
 
 .news-source{
+  font-size: larger;
+  color: #013a40;
   margin-block:12px;
+}
+
+.news-desc {
+  font-size:larger;
+  color:#013a40;
 }
 
 .loading-indicator {
