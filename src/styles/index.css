@@ -22,7 +22,7 @@ body {
   background: linear-gradient(90deg, #acebf2, #013a40);
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the content horizontally */
+  justify-content: center;
   padding: 7px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
@@ -38,7 +38,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Pushes the logo to the right */
+  margin-right: auto;
 }
 
 .logo-container h1 {
@@ -68,7 +68,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(90deg, #04D9D9, #025959);
+  background: linear-gradient(90deg, #04D9D9, #04ADBF);
   box-shadow: 7px 6px 7px #013A40;
   transition: all 0.3s ease;
   margin-left: 2px;
@@ -234,6 +234,7 @@ body, html {
 }
 
 .content {
+  color: #ACEBF2;
   padding-top: 2%;
   line-height: 30px;
   font-size: 18px;
@@ -258,7 +259,7 @@ body, html {
 /* Style for the "What We Do" section */
 
 .what-we-do {
-  background-color: #797676b3;  
+  background-color: #ACEBF2;
   padding: 30px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -267,13 +268,13 @@ body, html {
 
 .what-we-do h2 {
   font-size: 28px;
-  color: #ffffff;
+  color: #013A40;
   margin-bottom: 20px;
 }
 
 .what-we-do p {
   font-size: 18px;
-  color: #ffffff;
+  color: #025959;
   margin-bottom: 20px;
 }
 
@@ -287,7 +288,7 @@ body, html {
 /* Style for the "How Cybernaut Works" section */
 
 .how-it-works {
-  background-color: #797676b3;
+  background-color: #ACEBF2;
   padding: 50px 0;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -296,13 +297,13 @@ body, html {
 
 .how-it-works h2 {
   font-size: 28px;
-  color: #ffffff;
+  color: #013A40;
   margin-bottom: 20px;
 }
 
 .how-it-works p {
   font-size: 18px;
-  color: #ffffff;
+  color: #025959;
   margin-bottom: 20px;
 }
 
@@ -345,10 +346,10 @@ body, html {
 /* Footer styles */
 
 .footer {
-  background-color: #007bff;
+  background-color: #04ADBF;
   padding: 1px;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: -5px;
   width: 100%;
   transition: bottom 0.3s ease;
@@ -364,6 +365,7 @@ body, html {
 }
 
 .powered-by-link:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
