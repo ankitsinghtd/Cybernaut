@@ -1,15 +1,20 @@
+
+const apiKey = 'a519dc83b1df196c8f98158434e7da17c0a5a434581acaedbe2daf8a6cc786d5';
 let analysis;
 document.getElementById("scan-button").addEventListener('click', async function () {
     const mainUrl=document.getElementById('urltoscan').value;
-    const analysisReq= await fetch('/domain',{
+    const response= await fetch('/domain',{
+
         method:'POST',
         headers:{
             'Content-Type':'application/json'
         },
         body:JSON.stringify({Domain:mainUrl})
     });
-    if(analysisReq.ok){
-         analysis=await analysisReq.json();
+
+    if(response.ok){
+        analysis=await response.json();
+
         displayResult(analysis);
     }
     else{
