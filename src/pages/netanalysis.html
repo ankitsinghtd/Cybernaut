@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Network Analysis</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <link rel="stylesheet" href="../styles/netanalysishome.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/netanalysis-light.css">
     <script src="../scripts/domain.js" defer></script>
 </head>
 
@@ -17,9 +18,9 @@
             <div class="logo-container">
                 <h1 class="cybernaut-title">Cybernaut</h1>
             </div>
-                <div class="logo">
-                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
-                </div>
+            <div class="logo">
+                <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+            </div>
             <div class="menu-container">
                 <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
                 <div class="dropdown">
@@ -27,9 +28,9 @@
                         <i class="fas fa-wrench"> Tools &#9662;</i>
                     </a>
                     <div class="dropdown-content">
-                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
-                        <a href="/src/pages/webstructure.html">Website Structure</a>
-                        <a href="/src/pages/filescan.html">Scan a File</a>
+                        <a href="/src/pages/netanalysis.html">Network Analysis</a>
+                        <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
+                        <!-- <a href="/src/pages/filescan.html">Scan a File</a> -->
                     </div>
                 </div>
 
@@ -38,16 +39,16 @@
                         <i class="fas fa-cogs"> Services &#9662;</i>
                     </a>
                     <div class="dropdown-content">
-                        <a href="/src/pages/article.html">Articles</a>
-                        <a href="./blog.html">Blog</a>
+                        <!-- <a href="/src/pages/article.html">Articles</a> -->
+                        <a href="/src/pages/blog.html">Blog</a>
                         <a href="/src/pages/news.html">News</a>
                     </div>
                 </div>
-                
+
                 <a href="./index.html" class="menu-buttons contact-us-button">
                     <i class="fas fa-envelope"> Contact Us </i>
                 </a>
-                
+
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
@@ -55,12 +56,40 @@
             <h1>Network Analysis</h1>
         </div>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeStylesheet = document.getElementById('theme-stylesheet');
+            let currentTheme = localStorage.getItem('theme-preference') || 'light';
+
+            // Function to toggle the theme
+            function toggleTheme() {
+                if (currentTheme === 'light') {
+                    currentTheme = 'dark';
+                } else {
+                    currentTheme = 'light';
+                }
+
+                themeStylesheet.href = `/src/styles/netanalysis-${currentTheme}.css`;
+                localStorage.setItem('theme-preference', currentTheme);
+            }
+
+            // Set the initial theme
+            themeStylesheet.href = `/src/styles/netanalysis-${currentTheme}.css`;
+
+            // Attach the event listener to the button
+            themeToggle.addEventListener('click', toggleTheme);
+
+        });
+    </script>
+
     <main>
 
         <div class="introduction">
             <p>Welcome to Cybernaut's Network Analysis tool. Here's something to get you started:</p>
         </div>
-                
+
         <div class="search-container">
             <input type="text" id="urltoscan" placeholder="Enter a URL">
             <a class="scan-button" id="scan-button"><b>Scan URL</b></a>
@@ -75,7 +104,8 @@
             </div>
             <div class="card">
                 <h2 class="card-title">How the Report Is Generated</h2>
-                <p class="card-text" id="report-page-anchor">After you initiate a scan, our tool will analyze various aspects of the website,
+                <p class="card-text" id="report-page-anchor">After you initiate a scan, our tool will analyze various
+                    aspects of the website,
                     including its load time, security vulnerabilities, and network structure. The results will be
                     compiled into a comprehensive report, giving you insights into the website's performance and
                     potential issues.</p>
@@ -165,12 +195,20 @@
             </table>
         </div>
 
-        <canvas id="pie-chart" class ="hidden" width = "1000" height = "500" style="margin-top: 80px;"></canvas>
-        
-        <div id="summary-box" class="hidden">
-            <h2>Summary</h2>
-            <p id="summary">This is a summary of the network analysis results.</p>
+        <canvas id="pie-chart" class="hidden" width="1000" height="500" style="margin-top: 80px;"></canvas>
+
+        <div id="summary" class="hidden">
+            <div id="summary">
+                <h2>Summary</h2>
+                <p>This is a summary of the network analysis results.</p>
+            </div>
+            <div id="popularityrank">
+                <h2>Popularity Ranking</h2>
+                <p>Popularity ranking : </p>                
+            </div>
+
         </div>
+
     </main>
     <div id="result-container"></div>
 </body>

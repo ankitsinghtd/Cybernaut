@@ -1,14 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
+
+/* Reset styles and common styles */
 
 body {
   font-family: sans-serif;
@@ -17,6 +11,8 @@ body {
   background-color: white;
   padding-top: 60px;
 }
+
+/* Header styles */
 
 .header-container {
   position: fixed;
@@ -32,7 +28,7 @@ body {
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
   z-index: 100;
-  height: 60px;
+  height: 60px; 
 }
 
 .header-container:hover {
@@ -49,7 +45,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   color: #013A40;
   margin: 0;
-  font-size: 34px; /* 2 sizes bigger */
+  font-size: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -62,7 +58,7 @@ body {
 }
 
 .menu-container {
-  margin-left: 12.25%;
+  margin-left: 13%;
 }
 
 .menu-buttons {
@@ -77,7 +73,6 @@ body {
   transition: all 0.3s ease;
   margin-left: 2px;
   position: relative;
-  font-size: 16px; 
 }
 
 .menu-buttons::before {
@@ -110,7 +105,7 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px;
-  font-size: 16px; 
+  font-size: 16px;
   color: #007bff;
   transition: color 0.3s ease;
   margin-left: 10px;
@@ -161,91 +156,131 @@ body {
   font-size: 15px;
 }
 
-/* Article Styles */
-.article {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: white;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
 }
 
-.article h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    margin: 0 0 20px;
-    color: #333;
-}
-
-.article-intro {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #555;
-}
-
-.article h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.article p {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.article ul,
-.article ol {
-    margin-left: 20px;
-}
-
-.article-conclusion {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-top: 30px;
-    line-height: 1.6;
-    color: #555;
-}
-
-.article h2::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #007BFF;
-    margin: 10px 0;
-}
-
-.article h2::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    margin: 10px 0 20px;
-}
-
-.article p:first-of-type::first-letter {
-    font-family: "Georgia", Times, serif;
-    font-size: 36px;
-    line-height: 1;
-    float: left;
-    margin: 0 8px 0 0;
-}
-
-/* Footer Styles */
-.footer {
+header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    background-color: #007BFF;
-    color: white;
+} 
+main{
+  padding-block: 20px;
+  margin-top: 80px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  box-shadow: 0 0 4px #decffd;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  width: calc(28% - 20px);
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card:hover{
+  box-shadow: 1px 1px 8px #d4ecff;
+  background-color: #f9fdff;
+  transform: translateY(-2px);
+}
+
+.card-header img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content{
+  padding:12px;
+}
+
+.news-source{
+  margin-block:12px;
+}
+
+.loading-indicator {
+  text-align: center;
+  font-size: 24px;
+  padding: 40px;
+  display: none;
+  animation: fade-in 0.5s ease-in-out;
+  margin-bottom: 100px;
+
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+  box-shadow: inset 0 0 0 2px #fff;
+  transform-origin: center;
+  animation: fill 1.5s ease-in-out infinite;
+}
+
+.circle-1 {
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  animation-delay: -0.4s;
+}
+
+.circle-3 {
+  animation-delay: -0.8s;
+}
+
+.circle-4 {
+  animation-delay: -1.2s;
+}
+
+@keyframes fill {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 6px #1c1c1e;
+    transform: scale(1.5);
+  }
+
+  100% {
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 6px #fff;
+    transform: scale(1);
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .cards-container {
+      flex-direction: column;
+  }
+  .card {
+      width: 100%; /* Cards take full width when the screen is narrow */
+  }
 }

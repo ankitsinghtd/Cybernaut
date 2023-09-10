@@ -10,20 +10,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reset styles and common styles */
+
 body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #0c1726;
   padding-top: 60px;
 }
+
+/* Header styles */
 
 .header-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, #acebf2, #013a40);
+  background: linear-gradient(90deg, #3c5973, #0c1726);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +36,7 @@ body {
   border-radius: 15px;
   transition: box-shadow 0.3s ease;
   z-index: 100;
-  height: 60px;
+  height: 60px; 
 }
 
 .header-container:hover {
@@ -47,9 +51,9 @@ body {
 
 .logo-container h1 {
   font-family: 'Orbitron', sans-serif;
-  color: #013A40;
+  color: #0d0d0d;
   margin: 0;
-  font-size: 34px; /* 2 sizes bigger */
+  font-size: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -62,7 +66,7 @@ body {
 }
 
 .menu-container {
-  margin-left: 12.25%;
+  margin-left: 13%;
 }
 
 .menu-buttons {
@@ -72,12 +76,11 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(90deg, #04D9D9, #04ADBF);
+  background: linear-gradient(90deg, #3f6ca6, #3c5973);
   box-shadow: 7px 6px 7px #013A40;
   transition: all 0.3s ease;
   margin-left: 2px;
   position: relative;
-  font-size: 16px; 
 }
 
 .menu-buttons::before {
@@ -106,11 +109,11 @@ body {
 }
 
 #theme-toggle {
-  background-color: white;
+  background-color: black;
   border: none;
   cursor: pointer;
   padding: 10px;
-  font-size: 16px; 
+  font-size: 16px;
   color: #007bff;
   transition: color 0.3s ease;
   margin-left: 10px;
@@ -140,7 +143,7 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
   display: block;
-  color: #333;
+  color: #0d0d0d;
   transition: background-color 0.3s ease;
 }
 
@@ -149,7 +152,7 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #04ADBF;
+  background-color: #3f6ca6;
 }
 
 .dropdown-content a:last-child {
@@ -161,91 +164,147 @@ body {
   font-size: 15px;
 }
 
-/* Article Styles */
-.article {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+/* UTILS.CSS */
+:root { 
+  --main-bg-color: #013a40;
+  --font1: "Baloo Bhaina 2", cursive;
+  --font2: "Roboto", sans-serif;
 }
 
-.article h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    margin: 0 0 20px;
-    color: #333;
+.center{
+  text-align: center
 }
 
-.article-intro {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #555;
+.font1 {
+  font-family: var(--font1);
+}
+.font2 {
+  font-family: var(--font2);
 }
 
-.article h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #333;
+.max-width-1 {
+  max-width: 80vw;
 }
 
-.article p {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #333;
+.max-width-2 {
+  max-width: 60vw;
 }
 
-.article ul,
-.article ol {
-    margin-left: 20px;
+.m-auto {
+  margin: auto;
 }
 
-.article-conclusion {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-top: 30px;
-    line-height: 1.6;
-    color: #555;
+.mx-1{
+  margin-left: 23px;
+  margin-right: 23px;
 }
 
-.article h2::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #007BFF;
-    margin: 10px 0;
+.my-2{
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
-.article h2::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    margin: 10px 0 20px;
+.content {
+  height: 100%;
+  display: flex;
+  margin-top: 32px;
+  padding: 9px;
+  position: relative;
 }
 
-.article p:first-of-type::first-letter {
-    font-family: "Georgia", Times, serif;
-    font-size: 36px;
-    line-height: 1;
-    float: left;
-    margin: 0 8px 0 0;
+.content-left {
+  font-family: var(--font1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 49px;
+  z-index: 1;
 }
 
-/* Footer Styles */
+.content-left h1{
+  color: #3f6ca6;
+  font-size: 36px;
+}
+
+.content-left h2{
+  color: #3f6ca6;
+  font-size: 24px;
+}
+
+.content-left p{
+  color: #3c5973;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-right img {
+  height: 355px;
+  border: 2px solid black;
+  border-radius: 200px;
+}
+
+.home-articles {
+  padding: 18px;
+  background-color: #0d0d0d;
+  margin-top: 23px;
+  position: relative;
+}
+
+.year-box {
+  position: absolute;  
+  right: 0px;
+  top: 100px;
+  width: 234px;
+  height: 255px;
+  font-size: 18px;
+}
+
+.year-box h3,
+.yearradio {
+  color: #3f6ca6;
+}
+
+.year-box div {
+  margin: 12px 0px;
+}
+
+.home-article {
+  display: flex;
+  margin: 25px;
+}
+
+.home-article img {
+  width: 300px;
+  height: 180px;
+}
+
+.home-article-content {
+  color: #3f6ca6;
+  align-self: center;
+  padding: 25px;
+}
+
+.home-article-content a {
+  text-decoration: none;
+  color: #3f6ca6;
+}
+/* .home-articles{} */
 .footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #007BFF;
-    color: white;
+  height: 50px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+}
+
+.footer a {
+  color: white;
 }

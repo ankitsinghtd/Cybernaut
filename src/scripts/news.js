@@ -1,3 +1,4 @@
+
 const loadingIndicator = document.getElementById("loading-indicator");
 const loader = document.querySelector(".loader");
 const cardContainer = document.getElementById("cards-container");

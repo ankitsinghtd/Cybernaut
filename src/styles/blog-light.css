@@ -161,91 +161,138 @@ body {
   font-size: 15px;
 }
 
-/* Article Styles */
-.article {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+/* UTILS.CSS */
+:root { 
+  --main-bg-color: #013a40;
+  --font1: "Baloo Bhaina 2", cursive;
+  --font2: "Roboto", sans-serif;
 }
 
-.article h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    margin: 0 0 20px;
-    color: #333;
+.center{
+  text-align: center
 }
 
-.article-intro {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #555;
+.font1 {
+  font-family: var(--font1);
+}
+.font2 {
+  font-family: var(--font2);
 }
 
-.article h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #333;
+.max-width-1 {
+  max-width: 80vw;
 }
 
-.article p {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #333;
+.max-width-2 {
+  max-width: 60vw;
 }
 
-.article ul,
-.article ol {
-    margin-left: 20px;
+.m-auto {
+  margin: auto;
 }
 
-.article-conclusion {
-    font-family: "Georgia", Times, serif;
-    font-size: 18px;
-    margin-top: 30px;
-    line-height: 1.6;
-    color: #555;
+.mx-1{
+  margin-left: 23px;
+  margin-right: 23px;
 }
 
-.article h2::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #007BFF;
-    margin: 10px 0;
+.my-2{
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
-.article h2::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    margin: 10px 0 20px;
+.content {
+  height: 100%;
+  display: flex;
+  margin-top: 32px;
+  padding: 9px;
+  position: relative;
 }
 
-.article p:first-of-type::first-letter {
-    font-family: "Georgia", Times, serif;
-    font-size: 36px;
-    line-height: 1;
-    float: left;
-    margin: 0 8px 0 0;
+.content-left {
+  font-family: var(--font1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 49px;
+  z-index: 1;
 }
 
-/* Footer Styles */
+.content-left h1{
+  font-size: 36px;
+}
+
+.content-left h2{
+  font-size: 24px;
+}
+
+.content-left p{
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-right img {
+  height: 355px;
+  border: 2px solid black;
+  border-radius: 200px;
+}
+
+.home-articles {
+  padding: 18px;
+  background-color: rgb(248, 239, 239, 0.5);
+  margin-top: 23px;
+  position: relative;
+}
+
+.year-box {
+  position: absolute;  
+  right: 0px;
+  top: 100px;
+  width: 234px;
+  height: 255px;
+  font-size: 18px;
+}
+
+.year-box div {
+  margin: 12px 0px;
+}
+
+.home-article {
+  display: flex;
+  margin: 25px;
+}
+
+.home-article img {
+  width: 300px;
+  height: 180px;
+}
+
+.home-article-content {
+  align-self: center;
+  padding: 25px;
+}
+
+.home-article-content a {
+  text-decoration: none;
+  color: black;
+}
+/* .home-articles{} */
 .footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #007BFF;
-    color: white;
+  height: 50px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+}
+
+.footer a {
+  color: white;
 }

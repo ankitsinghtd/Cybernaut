@@ -22,3 +22,4 @@ async function domainReport(domain){
 module.exports={
     domainReport    
 }
+

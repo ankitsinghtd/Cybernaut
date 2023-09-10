@@ -1,28 +1,35 @@
+
 const apiKey = 'a519dc83b1df196c8f98158434e7da17c0a5a434581acaedbe2daf8a6cc786d5';
 let analysis;
 document.getElementById("scan-button").addEventListener('click', async function () {
     const mainUrl=document.getElementById('urltoscan').value;
     const response= await fetch('/domain',{
+
         method:'POST',
         headers:{
             'Content-Type':'application/json'
         },
         body:JSON.stringify({Domain:mainUrl})
     });
+
     if(response.ok){
         analysis=await response.json();
+
         displayResult(analysis);
     }
     else{
         console.error("Error finding the domain");
     }
+
     // Show the hidden tables
     const dnsTable = document.getElementById("dns-records");
     const networkTable = document.getElementById("network-statistics");
-    const summary = document.getElementById("summary-box");
+    const summary = document.getElementById("summary");
+    const popularityrank = document.getElementById("popularityrank");
     dnsTable.classList.remove("hidden");
     networkTable.classList.remove("hidden");
     summary.classList.remove("hidden");
+    popularityrank.classList.remove("hidden");
 
     // Create and display the pie chart
     console.log(analysis.data.attributes);
@@ -62,24 +69,6 @@ document.getElementById("scan-button").addEventListener('click', async function 
         Sum.innerHTML=`The site is safe to visit.`
     }
 });
-
-async function domainReport(domain){
-    const apiUrl=`https://www.virustotal.com/api/v3/domains/${domain}`;
-    options={
-        method:'GET',
-        headers:{
-            'x-apikey':apiKey,
-            accept:'application/json'
-        }
-    };
-    try{
-        const response=await fetch(apiUrl,options);
-        return response.json();
-    }
-    catch(err){
-        console.log(`Error while domain scan: ${err.status} and ${err.message}`);
-    }
-}
 
 async function displayResult(result) {
     const Dns=result.data.attributes.last_analysis_results;
