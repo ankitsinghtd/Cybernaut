@@ -269,15 +269,44 @@ body, html {
 }
 
 .what-we-do h2 {
-  font-size: 28px;
+  font-size: 32px;
   color: #3f6ca6;
   margin-bottom: 20px;
 }
 
 .what-we-do p {
-  font-size: 18px;
+  font-size: 22px;
   color: #3c5973;
   margin-bottom: 20px;
+}
+.what-we-do li{
+  font-size: 18px;
+  color:#3c5973
+}
+.what-we-do .section-content {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  justify-content: center;
+  align-items: center;
+}
+
+.what-we-do .left-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.what-we-do .left-column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.what-we-do .right-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
 }
 
 .section-separator {
@@ -298,16 +327,48 @@ body, html {
 }
 
 .how-it-works h2 {
-  font-size: 28px;
+  font-size: 32px;
   color: #3f6ca6;
   margin-bottom: 20px;
 }
 
 .how-it-works p {
-  font-size: 18px;
+  font-size: 22px;
   color: #3c5973;
   margin-bottom: 20px;
 }
+.how-it-works li{
+  font-size: 18px;
+  color: #3c5973;
+
+}
+/* Additional CSS for the two-column layout */
+.how-it-works .section-content {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works .left-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.how-it-works .right-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.how-it-works .right-column img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 /*Chatbot styles  */
 

@@ -28,23 +28,26 @@ const sliderItems = [
     {
         id: 1,
         img: './src/images/cyber.jpg',
-        subtitle: 'Network Analysis',
-        title: 'Network Analysis',
-        content: 'Analyse your network',
+        subtitle: 'Tools',
+        title: 'Domain Analysis',
+        content: 'Unlock insights into website security with our Domain Analysis tools',
+        link:'./src/pages/netanalysis.html'
     },
     {
         id: 2,
-        img: './src/images/attack.png',
-        subtitle: 'Subtitle 2',
-        title: 'Title 2',
-        content: 'Content 2',
+        img: './src/images/news.jpg',
+        subtitle: 'News',
+        title: 'Catch up on the last news related to cyber-security',
+        content: 'Stay informed and safeguard your digital world! Visit our News page to catch up on the latest cyber security updates and insights. Your online safety matters.',
+        link:'./src/pages/news.html'
     },
     {
         id: 3,
-        img: './src/images/killchain.jpg',
-        subtitle: 'Subtitle 3',
-        title: 'Title 3',
-        content: 'Content 3',
+        img: './src/images/community.png',
+        subtitle: 'Blogs',
+        title: 'Cyber Insights: Explore Our Informative Blogs',
+        content: 'Dive into our expertly curated blogs for valuable cyber insights, tips, and updates to enhance your online security',
+        link:'./src/pages/blog.html'
     },
 ];
 
@@ -80,6 +83,9 @@ function renderSlider() {
         const button = document.createElement('button');
         button.classList.add('button');
         button.textContent = 'Get Started Now!';
+        button.addEventListener('click',()=>{
+            window.location.href=item.link;
+        })
 
         infoContainer.appendChild(subtitle);
         infoContainer.appendChild(title);

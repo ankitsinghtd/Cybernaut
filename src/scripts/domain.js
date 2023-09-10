@@ -48,7 +48,7 @@ document.getElementById("scan-button").addEventListener('click', async function 
     networkTable.classList.remove("hidden");
     anchor.scrollIntoView({ behavior: 'smooth' });
     summary.classList.remove("hidden");
-    popularityrank.classList.remove("hidden");
+    //popularityrank.classList.remove("hidden");
 
     // Create and display the pie chart
     console.log(analysis.data.attributes);
@@ -90,25 +90,47 @@ document.getElementById("scan-button").addEventListener('click', async function 
 });
 
 async function displayResult(result) {
-    const Dns = result.data.attributes.last_analysis_results;
-    const AlienVault = document.getElementById("AV");
-    const SP = document.getElementById("SP");
-    const BV = document.getElementById("BV");
-    const VX = document.getElementById("VX");
-    const GSB = document.getElementById("GSB");
-    const MAL = document.getElementById("MAL");
-    const SR = document.getElementById("SR");
-    const CS = document.getElementById("CS");
-    const KAS = document.getElementById("Kas");
-    const ET = document.getElementById("ET");
-    AlienVault.innerHTML = Dns.AlienVault.category;
-    SP.innerHTML = Dns.Sophos.category;
-    BV.innerHTML = Dns.Bkav.category;
-    VX.innerHTML = Dns["VX Vault"].category;
-    GSB.innerHTML = Dns["Google Safebrowsing"].category;
-    MAL.innerHTML = Dns.Malwared.category;
-    SR.innerHTML = Dns.SOCRadar.category;
-    CS.innerHTML = Dns.CrowdSec.category;
-    KAS.innerHTML = Dns.Kaspersky.category;
-    ET.innerHTML = Dns.EmergingThreats.category;
+
+    const Dns=result.data.attributes.last_analysis_results;
+    const AlienVault=document.getElementById("AV");
+    const SP=document.getElementById("SP");
+    const BV=document.getElementById("BV");  
+    const VX=document.getElementById("VX");
+    const GSB=document.getElementById("GSB");
+    const MAL=document.getElementById("MAL");
+    const SR=document.getElementById("SR");
+    const CS=document.getElementById("CS");
+    const KAS=document.getElementById("Kas");
+    const ET=document.getElementById("ET");
+    AlienVault.innerHTML=Dns.AlienVault.category;
+    SP.innerHTML=Dns.Sophos.category;
+    BV.innerHTML=Dns.Bkav.category;
+    VX.innerHTML=Dns["VX Vault"].category;
+    GSB.innerHTML=Dns["Google Safebrowsing"].category;
+    MAL.innerHTML=Dns.Malwared.category;
+    SR.innerHTML=Dns.SOCRadar.category;
+    CS.innerHTML=Dns.CrowdSec.category;
+    KAS.innerHTML=Dns.Kaspersky.category;
+    ET.innerHTML=Dns.EmergingThreats.category;
+
+    const about=result.data.attributes;
+    const Reg=document.getElementById("reg");
+    const Cdate=document.getElementById("Cdate");
+    const pop=document.getElementById("Pop");
+    const type=document.getElementById("type");
+    const last=document.getElementById("last");
+    Reg.innerHTML=about.registrar;
+    const timestamp = about.creation_date;
+    const date = new Date(timestamp * 1000);
+    Cdate.innerHTML=date;
+    if(about.popularity_ranks["Cisco Umbrella"])
+    {
+        pop.innerHTML=about.popularity_ranks["Cisco Umbrella"].rank;
+    }
+    else pop.innerHTML="unranked";
+    type.innerHTML=about.categories["Forcepoint ThreatSeeker"];
+    const la = about.last_analysis_date;
+    const ladate = new Date(la * 1000);
+    last.innerHTML=ladate;
+
 }

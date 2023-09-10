@@ -96,7 +96,7 @@
         </div>
 
         <div class="search-container">
-            <input type="text" id="urltoscan" placeholder="Enter a URL">
+            <input type="text" id="urltoscan" placeholder="Enter a URL(eg:www.google.com)">
             <a class="scan-button" id="scan-button"><b>Scan URL</b></a>
         </div>
 
@@ -174,29 +174,33 @@
             </table>
 
             <table id="network-statistics" class="hidden">
-                <caption>Network Statistics</caption>
+                <caption>About the domain</caption>
                 <thead>
                     <tr>
-                        <th>Metric</th>
+                        <th>Last analysis</th>
                         <th>Value</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Packets Sent</td>
-                        <td>1024</td>
+                        <td>Registrar</td>
+                        <td id="reg">1024</td>
                     </tr>
                     <tr>
-                        <td>Packets Received</td>
-                        <td>768</td>
+                        <td>Created On</td>
+                        <td id="Cdate">768</td>
                     </tr>
                     <tr>
-                        <td>Latency</td>
-                        <td>35 ms</td>
+                        <td>Popularity</td>
+                        <td id="Pop">35 ms</td>
                     </tr>
                     <tr>
-                        <td>Bandwidth</td>
-                        <td>50 Mbps</td>
+                        <td>Type</td>
+                        <td id="type">50 Mbps</td>
+                    </tr>
+                    <tr>
+                        <td>Last analysis</td>
+                        <td id="last">50 Mbps</td>
                     </tr>
                 </tbody>
             </table>
@@ -209,15 +213,7 @@
                 <h2>Summary</h2>
                 <p>This is a summary of the network analysis results.</p>
             </div>
-            <div id="popularityrank">
-                <h2>Popularity Ranking</h2>
-                <p>Popularity ranking : </p>
-            </div>
-
-        </div>
 
     </main>
-    <div id="result-container"></div>
-</body>
 
 </html>
