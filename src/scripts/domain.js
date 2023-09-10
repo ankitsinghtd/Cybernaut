@@ -1,12 +1,21 @@
 const apiKey = 'a519dc83b1df196c8f98158434e7da17c0a5a434581acaedbe2daf8a6cc786d5';
-
+let analysis;
 document.getElementById("scan-button").addEventListener('click', async function () {
-    const baseUrl = document.getElementById("urltoscan").value;
-    const baseUrlObj=new URL(baseUrl);
-    const domain=baseUrlObj.hostname;
-    const analysis = await domainReport(domain);
-    displayResult(analysis);
-
+    const mainUrl=document.getElementById('urltoscan').value;
+    const response= await fetch('/domain',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({Domain:mainUrl})
+    });
+    if(response.ok){
+        analysis=await response.json();
+        displayResult(analysis);
+    }
+    else{
+        console.error("Error finding the domain");
+    }
     // Show the hidden tables
     const dnsTable = document.getElementById("dns-records");
     const networkTable = document.getElementById("network-statistics");

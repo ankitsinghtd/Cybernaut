@@ -1,5 +1,3 @@
-const apiKey = '_REDACTED_';
-const apiUrl = 'https://newsapi.org/v2/everything?q=';
 const loadingIndicator = document.getElementById("loading-indicator");
 const loader = document.querySelector(".loader");
 const cardContainer = document.getElementById("cards-container");
@@ -11,14 +9,13 @@ window.addEventListener('load', () => {
 
 async function fetchNews(query) {
     try {
-        const response = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
-
+        const response = await fetch(`/news/${query}`);
         if (!response.ok) {
             throw new Error(`Network response was not ok (status: ${response.status})`);
         }
 
         const data = await response.json();
-        bindData(data.articles);
+        bindData(data);
     } catch (error) {
         console.error("Error fetching news:", error);
         hideLoadingIndicator();
