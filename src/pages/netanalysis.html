@@ -90,10 +90,17 @@
             <p>Welcome to Cybernaut's Network Analysis tool. Here's something to get you started:</p>
         </div>
 
+        <div class="loading-container" id="loading-container">
+            <div class="loading-indicator">Scanning ...</div>
+            <div class="loader"></div>
+        </div>
+
         <div class="search-container">
             <input type="text" id="urltoscan" placeholder="Enter a URL">
             <a class="scan-button" id="scan-button"><b>Scan URL</b></a>
         </div>
+
+        <div class="error-div" id="error-message" style="display: none;"></div>
 
         <div class="description">
             <div class="card">
@@ -204,7 +211,7 @@
             </div>
             <div id="popularityrank">
                 <h2>Popularity Ranking</h2>
-                <p>Popularity ranking : </p>                
+                <p>Popularity ranking : </p>
             </div>
 
         </div>

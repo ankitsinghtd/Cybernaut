@@ -163,6 +163,37 @@ body {
   text-align: center;
 }
 
+/* Loading icon animation */
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading-indicator {
+  color: #013a40;
+  font-size: 24px;
+}
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
 
 div#data-visualization {
   width: 50%;
@@ -231,6 +262,16 @@ input:focus {
 .scan-button:active {
   box-shadow: 0 5px #666;
   transform: translateY(25px);
+}
+
+.error-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  color: red;
 }
 
 .introduction {
