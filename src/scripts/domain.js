@@ -27,7 +27,7 @@ document.getElementById("scan-button").addEventListener('click', async function 
     dnsTable.classList.remove("hidden");
     networkTable.classList.remove("hidden");
     summary.classList.remove("hidden");
-    popularityrank.classList.remove("hidden");
+    //popularityrank.classList.remove("hidden");
 
     // Create and display the pie chart
     console.log(analysis.data.attributes);
@@ -90,4 +90,24 @@ async function displayResult(result) {
     CS.innerHTML=Dns.CrowdSec.category;
     KAS.innerHTML=Dns.Kaspersky.category;
     ET.innerHTML=Dns.EmergingThreats.category;
+
+    const about=result.data.attributes;
+    const Reg=document.getElementById("reg");
+    const Cdate=document.getElementById("Cdate");
+    const pop=document.getElementById("Pop");
+    const type=document.getElementById("type");
+    const last=document.getElementById("last");
+    Reg.innerHTML=about.registrar;
+    const timestamp = about.creation_date;
+    const date = new Date(timestamp * 1000);
+    Cdate.innerHTML=date;
+    if(about.popularity_ranks["Cisco Umbrella"])
+    {
+        pop.innerHTML=about.popularity_ranks["Cisco Umbrella"].rank;
+    }
+    else pop.innerHTML="unranked";
+    type.innerHTML=about.categories["Forcepoint ThreatSeeker"];
+    const la = about.last_analysis_date;
+    const ladate = new Date(la * 1000);
+    last.innerHTML=ladate;
 }
