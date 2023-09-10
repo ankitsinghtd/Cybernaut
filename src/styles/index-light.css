@@ -58,7 +58,7 @@ body {
 }
 
 .menu-container {
-  margin-left: 13%;
+  margin-left: 12.25%;
 }
 
 .menu-buttons {
@@ -351,7 +351,7 @@ body, html {
   text-align: center;
   position: relative;
   bottom: -5px;
-  width: 100%;
+  width: 99.9%;
   transition: bottom 0.3s ease;
 }
 

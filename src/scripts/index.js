@@ -1,21 +1,28 @@
-const themeToggle = document.getElementById('theme-toggle');
-const themeStylesheet = document.getElementById('theme-stylesheet');
-const currentTheme = localStorage.getItem('theme');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+    let currentTheme = localStorage.getItem('theme-preference') || 'light';
 
-if (currentTheme) {
-    themeStylesheet.href = currentTheme;
-}
+    // Function to toggle the theme
+    function toggleTheme() {
+        if (currentTheme === 'light') {
+            currentTheme = 'dark';
+        } else {
+            currentTheme = 'light';
+        }
 
-themeToggle.addEventListener('click', () => {
-    console.log("click");
-    if (themeStylesheet.href.endsWith('src/styles/index.css')) {
-        themeStylesheet.href = 'src/styles/index-dark.css';
-        localStorage.setItem('theme', 'src/styles/index-dark.css');
-    } else {
-        themeStylesheet.href = 'src/styles/index.css';
-        localStorage.setItem('theme', 'src/styles/index.css');
+        themeStylesheet.href = `/src/styles/index-${currentTheme}.css`;
+        localStorage.setItem('theme-preference', currentTheme);
     }
+
+    // Set the initial theme
+    themeStylesheet.href = `/src/styles/index-${currentTheme}.css`;
+
+    // Attach the event listener to the button
+    themeToggle.addEventListener('click', toggleTheme);
+
 });
+
 
 const sliderItems = [
     {

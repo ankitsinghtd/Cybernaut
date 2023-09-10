@@ -5,43 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybernaut</title>
-    <link rel="stylesheet" id="theme-stylesheet" href="../styles/article.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/article-light.css">
 </head>
 
 <body>
     <header>
         <div class="header-container">
+            <div class="logo-container">
+                <h1 class="cybernaut-title">Cybernaut</h1>
+            </div>
             <div class="logo">
                 <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
-                <h1>Cybernaut</h1>
             </div>
-            <div class="right-section">
-                <a href="/index.html" class="menu-buttons">Home</a>
+            <div class="menu-container">
+                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
                 <div class="dropdown">
-                    <button class="menu-buttons">Tools &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
-                        <a href="/src/pages/netanalysishome.html">Network Analysis</a>
+                        <a href="/src/pages/netanalysis.html">Network Analysis</a>
                         <a href="/src/pages/webstructure.html">Website Structure</a>
                         <a href="/src/pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
+
                 <div class="dropdown">
-                    <button class="menu-buttons">Services &#9662;</button>
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
                     <div class="dropdown-content">
                         <a href="/src/pages/article.html">Articles</a>
-                        <a href="/src/pages/article.html">Blog</a>
+                        <a href="./blog.html">Blog</a>
                         <a href="/src/pages/news.html">News</a>
                     </div>
                 </div>
-                <a href="/index.html" class="menu-buttons">Contact Us</a>
+
+                <a href="./index.html" class="menu-buttons contact-us-button">
+                    <i class="fas fa-envelope"> Contact Us </i>
+                </a>
+
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
     </header>
-    <script src="src/scripts/theme.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeStylesheet = document.getElementById('theme-stylesheet');
+            let currentTheme = localStorage.getItem('theme-preference') || 'light';
+
+            // Function to toggle the theme
+            function toggleTheme() {
+                if (currentTheme === 'light') {
+                    currentTheme = 'dark';
+                } else {
+                    currentTheme = 'light';
+                }
+
+                themeStylesheet.href = `/src/styles/article-${currentTheme}.css`;
+                localStorage.setItem('theme-preference', currentTheme);
+            }
+
+            // Set the initial theme
+            themeStylesheet.href = `/src/styles/article-${currentTheme}.css`;
+
+            // Attach the event listener to the button
+            themeToggle.addEventListener('click', toggleTheme);
+
+        });
+    </script>
     <main>
         <header>
-            <h1 style="font-size: 36px";>Article Showcase</h1>
+            <h1 style="font-size: 36px" ;>Article Showcase</h1>
         </header>
         <div class="container">
             <div class="article">
@@ -59,32 +97,35 @@
             <div class="article">
                 <div class="article3">
                     <h2>Ethics and Laws of Cyber Security</h2>
-                    <p>Add appropriate description here. <a href="/src/pages/articles/ethicsandlaw.html">Read more</a></p>
+                    <p>Add appropriate description here. <a href="/src/pages/articles/ethicsandlaw.html">Read more</a>
+                    </p>
                 </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const articles = document.querySelectorAll(".article");
+    
+                articles.forEach((article) => {
+                    article.addEventListener("mousemove", (e) => {
+                        const xPos = (e.clientX - article.getBoundingClientRect().left) / article.clientWidth;
+                        const yPos = (e.clientY - article.getBoundingClientRect().top) / article.clientHeight;
+    
+                        article.style.setProperty("--gradientX", xPos);
+                        article.style.setProperty("--gradientY", yPos);
+                    });
+    
+                    article.addEventListener("mouseleave", () => {
+                        article.style.setProperty("--gradientX", 0.5);
+                        article.style.setProperty("--gradientY", 0.5);
+                    });
+                });
+            });
+        </script>
     </main>
+    
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const articles = document.querySelectorAll(".article");
 
-  articles.forEach((article) => {
-    article.addEventListener("mousemove", (e) => {
-      const xPos = (e.clientX - article.getBoundingClientRect().left) / article.clientWidth;
-      const yPos = (e.clientY - article.getBoundingClientRect().top) / article.clientHeight;
 
-      article.style.setProperty("--gradientX", xPos);
-      article.style.setProperty("--gradientY", yPos);
-    });
-
-    article.addEventListener("mouseleave", () => {
-      article.style.setProperty("--gradientX", 0.5);
-      article.style.setProperty("--gradientY", 0.5);
-    });
-  });
-});
-
-</script>
 
 </html>

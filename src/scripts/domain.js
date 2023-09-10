@@ -19,10 +19,12 @@ document.getElementById("scan-button").addEventListener('click', async function 
     // Show the hidden tables
     const dnsTable = document.getElementById("dns-records");
     const networkTable = document.getElementById("network-statistics");
-    const summary = document.getElementById("summary-box");
+    const summary = document.getElementById("summary");
+    const popularityrank = document.getElementById("popularityrank");
     dnsTable.classList.remove("hidden");
     networkTable.classList.remove("hidden");
     summary.classList.remove("hidden");
+    popularityrank.classList.remove("hidden");
 
     // Create and display the pie chart
     console.log(analysis.data.attributes);
