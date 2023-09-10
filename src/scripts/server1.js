@@ -20,14 +20,12 @@ const apiUrl = 'https://newsapi.org/v2/everything?q=';
 
 app.post('/domain',async (req,res)=>{
     try{
-        const mainUrl=req.body.Domain;  
-        const url=new URL(mainUrl);
-        const domain=url.host;
+        const mainUrl=req.body.Domain; 
         if(!mainUrl){
             return res.status(400).json();
        }
        console.log("Searching about the domain");
-       const record = await checker.domainReport(domain);
+       const record = await checker.domainReport(mainUrl);
        res.json(record);
     }
     catch(err){
