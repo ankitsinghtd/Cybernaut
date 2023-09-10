@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernaut</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/blog-light.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <h1 class="cybernaut-title">Cybernaut</h1>
+            </div>
+            <div class="logo">
+                <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+            </div>
+            <div class="menu-container">
+                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/src/pages/netanalysis.html">Network Analysis</a>
+                        <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
+                        <!-- <a href="/src/pages/filescan.html">Scan a File</a> -->
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <!-- <a href="/src/pages/article.html">Articles</a> -->
+                        <a href="/src/pages/blog.html">Blog</a>
+                        <a href="/src/pages/news.html">News</a>
+                    </div>
+                </div>
+
+                <a href="./index.html" class="menu-buttons contact-us-button">
+                    <i class="fas fa-envelope"> Contact Us </i>
+                </a>
+
+                <button id="theme-toggle">Dark/Light</button>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeStylesheet = document.getElementById('theme-stylesheet');
+            let currentTheme = localStorage.getItem('theme-preference') || 'light';
+
+            // Function to toggle the theme
+            function toggleTheme() {
+                if (currentTheme === 'light') {
+                    currentTheme = 'dark';
+                } else {
+                    currentTheme = 'light';
+                }
+
+                themeStylesheet.href = `/src/styles/blog-${currentTheme}.css`;
+                localStorage.setItem('theme-preference', currentTheme);
+            }
+
+            // Set the initial theme
+            themeStylesheet.href = `/src/styles/blog-${currentTheme}.css`;
+
+            // Attach the event listener to the button
+            themeToggle.addEventListener('click', toggleTheme);
+
+        });
+    </script>
+
+    <main>
+        <div class="m-auto content max-width-1 my-2">
+            <div class="content-left">
+                <h1>Cybernaut Blogs and Articles</h1>
+                <br>
+                <h2>Your Ultimate Platform for Securing the Digital Realm</h2>
+                <br>
+                <p>Welcome to Cybernaut Blogs, your online haven for cybersecurity enthusiasts! Submit your articles, and
+                    upon approval, gain unparalleled exposure to make a significant impact.</p>
+                <p>In today's world of ever-growing digital threats, it's vital to fortify our defenses and share
+                    knowledge to protect our virtual realms. Just like stowed-away Halloween decorations, cybersecurity
+                    requires year-round commitment. Let's confront digital fears and make the online world safer
+                    together.</p>
+            </div>
+            <div class="content-right">
+                <img src="/src/images/hacker-svgrepo-com.svg">
+            </div>
+        </div>
+
+        <div class="max-width-1 m-auto">
+            <hr>
+        </div>
+        <div class="home-articles max-width-1 m-auto font2">
+            <h2>Featured Articles</h2>
+            <div class="year-box adjust-year">
+                <div>
+                    <h3>Year </h3>
+                </div>
+                <div class="yearradio">
+                    <input type="radio" name="year" id="";> 2023
+                </div>
+                <div>
+                    <!-- Add more years and functionality as needed -->
+                    <!-- <input type="radio" name="year" id=""> 2021 -->
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <a href="/src/pages/articles/ethicsandlaw.html">
+                    <img src="/src/images/article1.png" alt="article">
+                    </a>
+                </div>
+                <div class="home-article-content font1">
+                    <a href="/src/pages/articles/ethicsandlaw.html">
+                        <h3>Cyber Security Ethics and Laws : </h3>
+                        <h4>The Importance of Ethical Conduct</h4>
+                    </a>
+                    <br>
+                    <div>Ankit Singh</div>
+                    <span>08 September | 3 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article">
+                <div class="home-article-img">
+                    <img src="/src/images/article-svgrepo-com.svg" alt="article">
+                </div>
+                <div class="home-article-content font1">
+                    <a href="#">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    </a>
+
+                    <div>Author Name</div>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Copyright &copy; Cybernaut 2023 </p>
+        </div>
+    </main>
+
+</body>
+
+</html>
