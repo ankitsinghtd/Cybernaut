@@ -7,7 +7,7 @@
     <title>Cybernaut - Cyber Security Ethics and Laws</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="ethicsandlaw.css">
+    <link rel="stylesheet"  id="theme-stylesheet" href="ethicsandlaw-light.css">
 </head>
 
 <body>
@@ -51,6 +51,34 @@
             </div>
         </div>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeStylesheet = document.getElementById('theme-stylesheet');
+            let currentTheme = localStorage.getItem('theme-preference') || 'light';
+
+            // Function to toggle the theme
+            function toggleTheme() {
+                if (currentTheme === 'light') {
+                    currentTheme = 'dark';
+                } else {
+                    currentTheme = 'light';
+                }
+
+                themeStylesheet.href = `ethicsandlaw-${currentTheme}.css`;
+                localStorage.setItem('theme-preference', currentTheme);
+            }
+
+            // Set the initial theme
+            themeStylesheet.href = `ethicsandlaw-${currentTheme}.css`;
+
+            // Attach the event listener to the button
+            themeToggle.addEventListener('click', toggleTheme);
+
+        });
+    </script>
+
     <main>
         <article class="article">
             <h1>Cyber Security Ethics and Laws</h1>
@@ -115,7 +143,7 @@
         </article>
     </main>
     <footer>
-        <p>&copy; 2023 Cybernaut. All rights reserved.</p>
+        <div class="footer" ><p>&copy; 2023 Cybernaut. All rights reserved.</p></div>
     </footer>
 </body>
 
