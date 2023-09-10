@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { config } from 'dotenv';
 
-config(); // Load environment variables from .env file
+config();
 
 const Api_Key = process.env.Api_key;
 function sanitizeInputUrl(inputUrl) {

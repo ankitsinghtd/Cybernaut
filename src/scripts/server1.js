@@ -30,6 +30,7 @@ app.post('/domain',async (req,res)=>{
     }
     catch(err){
         console.log(`Error in reporting ${err.message}`);
+        res.status(500).json({ error: 'Invalid URL, try adding https or check for typos' });
     }
 });
 app.get('/news/:query', async (req, res) => {
