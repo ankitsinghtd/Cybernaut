@@ -287,7 +287,7 @@ body, html {
 }
 .what-we-do .section-content {
   display: flex;
-  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -347,7 +347,7 @@ body, html {
 /* Additional CSS for the two-column layout */
 .how-it-works .section-content {
   display: flex;
-  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -432,7 +432,6 @@ body, html {
 /* Footer link styles */
 .powered-by-link {
   color: #fff;
-  /* White text */
   text-decoration: none;
   margin: 5px;
   display: block;

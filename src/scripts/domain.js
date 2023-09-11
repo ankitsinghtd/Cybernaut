@@ -53,7 +53,7 @@ document.getElementById("scan-button").addEventListener('click', async function 
     //popularityrank.classList.remove("hidden");
 
     // Create and display the pie chart
-    console.log(analysis.data.attributes);
+    //console.log(analysis.data.attributes);
     const Charting = analysis.data.attributes.last_analysis_stats;
     const malicious = Charting.malicious;
     const harmless = Charting.harmless;
