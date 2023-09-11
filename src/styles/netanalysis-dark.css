@@ -264,6 +264,16 @@ input:focus {
   transform: translateY(25px);
 }
 
+.error-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  color: red;
+}
+
 .introduction {
   color: #3c5973;
   text-align: center;

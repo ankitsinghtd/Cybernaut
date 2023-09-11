@@ -26,6 +26,9 @@ app.post('/domain',async (req,res)=>{
        }
        console.log("Searching about the domain");
        const record = await checker.domainReport(mainUrl);
+       if(!record){
+        res.status(500).json({ error: 'No data found for provided website.' });
+       }
        res.json(record);
     }
     catch(err){

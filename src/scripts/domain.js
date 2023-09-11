@@ -34,7 +34,9 @@ document.getElementById("scan-button").addEventListener('click', async function 
         const errorMessageText = errorResponse.error || 'An unknown error occurred.';
         errorMessage.textContent = errorMessageText;
         errorMessage.style.display = 'block';
+        loadingContainer.style.display = 'none';
         console.error("Error finding the domain");
+        return ;
     }
 
     // Show the hidden tables
