@@ -127,9 +127,21 @@
     <script>
         const chatbotButton = document.getElementById("chatbot-toggle");
         const chatbot = document.querySelector(".chatbot");
+        const chatbotImage = document.querySelector(".chatbot-img img");
+
+        let isPaused = false;
 
         chatbotButton.addEventListener("click", () => {
             chatbot.classList.toggle("show-chatbot");
+            chatbotButton.classList.toggle("paused");
+
+            if (isPaused) {
+                chatbotImage.style.animation = "spin 2.5s linear infinite";
+                isPaused = false;
+            } else {
+                chatbotImage.style.animation = "none";
+                isPaused = true;
+            }
         });
     </script>
     <footer>

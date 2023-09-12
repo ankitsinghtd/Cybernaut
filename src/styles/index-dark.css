@@ -388,6 +388,34 @@ body, html {
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  animation-name: pulse-spin;
+  animation-duration: 3s; /* Adjust the total duration as desired */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse-spin {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.1) rotate(60deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(120deg);
+  }
+  40% {
+    transform: scale(1) rotate(180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(240deg);
+  }
+  85% {
+    transform: scale(1.1) rotate(300deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
 }
 
 .chatbot-text{
