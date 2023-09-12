@@ -28,7 +28,7 @@
                     <div class="dropdown-content">
                         <a href="/src/pages/netanalysis.html">Network Analysis</a>
                         <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
-                        <!-- <a href="/src/pages/filescan.html">Scan a File</a> -->
+                        <a href="/src/pages/filescan.html">Scan a File</a>
                     </div>
                 </div>
 
@@ -85,17 +85,81 @@
                 <br>
                 <h2>Your Ultimate Platform for Securing the Digital Realm</h2>
                 <br>
-                <p>Welcome to Cybernaut Blogs, your online haven for cybersecurity enthusiasts! Submit your articles, and
+                <p>Welcome to Cybernaut Blogs, your online haven for cybersecurity enthusiasts! Submit your articles,
+                    and
                     upon approval, gain unparalleled exposure to make a significant impact.</p>
                 <p>In today's world of ever-growing digital threats, it's vital to fortify our defenses and share
                     knowledge to protect our virtual realms. Just like stowed-away Halloween decorations, cybersecurity
                     requires year-round commitment. Let's confront digital fears and make the online world safer
                     together.</p>
+                <br>
             </div>
             <div class="content-right">
                 <img src="/src/images/hacker-svgrepo-com.svg">
             </div>
         </div>
+        <div class="max-width-1 m-auto">
+            <div class="rw-article-buttons">
+                <button class="write-article-button">Write an article</button>
+                <button class="read-article-button">Read Articles <i class="fas fa-arrow-down"></i></button>
+            </div>
+        </div>
+
+        <div id="articleModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Share your thoughts</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="articleTitle">Title:</label>
+                        <input type="text" id="articleTitle" name="articleTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="articleContent">Content:</label>
+                        <textarea id="articleContent" name="articleContent" rows="7" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const modal = document.getElementById('articleModal');
+                const closeButton = document.querySelector('.close-button');
+                const writeArticleButton = document.querySelector('.write-article-button');
+                const readArticleButton = document.querySelector('.read-article-button');
+
+                function openModal() {
+                    modal.style.display = 'flex';
+                }
+
+                function closeModal() {
+                    modal.style.display = 'none';
+                }
+
+                writeArticleButton.addEventListener('click', openModal);
+                closeButton.addEventListener('click', closeModal);
+
+                window.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                readArticleButton.addEventListener('click', () => {
+                    const articlesSection = document.querySelector('.home-articles');
+                    if (articlesSection) {
+                        const scrollPosition = window.scrollY + articlesSection.getBoundingClientRect().top;
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth',
+                        });
+                    }
+                });
+            });
+
+        </script>
 
         <div class="max-width-1 m-auto">
             <hr>
@@ -117,7 +181,7 @@
             <div class="home-article">
                 <div class="home-article-img">
                     <a href="/src/pages/articles/ethicsandlaw.html">
-                    <img src="/src/images/article1.png" alt="article">
+                        <img src="/src/images/article1.png" alt="article">
                     </a>
                 </div>
                 <div class="home-article-content font1">

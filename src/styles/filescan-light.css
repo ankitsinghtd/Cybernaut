@@ -1,0 +1,223 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset styles and common styles */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(180, 96%, 43%, 0.5);
+    padding-top: 60px;
+}
+
+/* Header styles */
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #acebf2, #013a40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease;
+    z-index: 100;
+    height: 60px;
+}
+
+.header-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo-container h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #013A40;
+    margin: 0;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo img {
+    margin-top: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu-container {
+    margin-left: 13%;
+}
+
+.menu-buttons {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #04D9D9, #04ADBF);
+    box-shadow: 7px 6px 7px #013A40;
+    transition: all 0.3s ease;
+    margin-left: 2px;
+    position: relative;
+}
+
+.menu-buttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.menu-buttons:hover::before {
+    border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:active::before {
+    border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:hover {
+    opacity: 1;
+    box-shadow: 0 0 5px #04D9D9, 0 0 15px #04ADBF, 0 0 15px #e631dd, 0 0 15px #ACEBF2;
+}
+
+#theme-toggle {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    color: #007bff;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+}
+
+/* Dropdown styling */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #cde7eb;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 9.5px;
+    margin-left: 3px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #04ADBF;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown button.menu-buttons {
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* Page Heading styles */
+
+.ScanHeading h1 {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 70px;
+    color: #013a40;
+    font-size: 36px;
+}
+
+/* Main introduction and description styles */
+.introduction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #fff 10%, transparent 20%);
+    background-size: 300% 300%;
+    animation: animateBackground 5s linear infinite;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.introduction {
+    background: url('your-background-image.jpg') center/cover no-repeat;
+    height: 10vh;
+    position: relative;
+}
+
+.introduction-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction-text {
+    text-align: center;
+    color: #013A40;
+}
+
+.introduction-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.introduction-text p {
+    font-size: 18px;
+}
+
+/* cards styles */
