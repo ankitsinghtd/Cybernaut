@@ -7,16 +7,17 @@ import fetch from 'node-fetch';
 import * as checker from './checker.js';
 import { collection, getDocs } from 'firebase/firestore';
 import { getFirestore,addDoc } from "firebase/firestore";
+import { features } from 'process';
 
 config();
 const firebaseConfig = {
-  apiKey: process.env.Firebase_api,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId,
-  measurementId: process.env.measurementId
+apiKey: process.env.Firebase_api,
+authDomain: process.env.authDomain,
+projectId: process.env.projectId,
+storageBucket: process.env.storageBucket,
+messagingSenderId: process.env.messagingSenderId,
+appId: process.env.appId,
+measurementId: process.env.measurementId
 };
 
 
@@ -31,21 +32,21 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../')));
 
 const apiUrl = 'https://newsapi.org/v2/everything?q=';
-
+let f_article;
 app.post('/ip',async (req,res)=>{
     try{
         console.log("after");
         const ipadd=req.body.IP; 
         if(!ipadd){
             return res.status(400).json();
-       }
-       console.log("Searching about the IP");
-       const record = await checker.IPchecker(ipadd);
-       console.log(record);
-       if(!record){
+    }
+    console.log("Searching about the IP");
+    const record = await checker.IPchecker(ipadd);
+    console.log(record);
+    if(!record){
         res.status(500).json({ error: 'No data found for provided IP.' });
-       }
-       res.json(record);
+    }
+    res.json(record);
     }
     catch(err){
         console.log(`Error in reporting ${err.message}`);
@@ -68,19 +69,36 @@ app.get('/featured-articles', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch featured articles' });
     }
 });
+app.get(`/articlepage`, async (req, res) => {
+        try {
+        const articleID = req.query.articleID;
+        const articlesCollection = collection(db, 'blogs');
+        const querySnapshot = await getDocs(articlesCollection);
+        const featuredArticles = [];
+
+        querySnapshot.forEach((doc) => {
+            featuredArticles.push(doc.data());
+        });
+        res.json(featuredArticles);
+    } catch (error) {
+        console.error('Error fetching featured articles:', error);
+        res.status(500).json({ error: 'Failed to fetch featured articles' });
+    }
+});
+
 
 app.post('/domain',async (req,res)=>{
     try{
         const mainUrl=req.body.Domain; 
         if(!mainUrl){
             return res.status(400).json();
-       }
-       console.log("Searching about the domain");
-       const record = await checker.domainReport(mainUrl);
-       if(!record){
+    }
+    console.log("Searching about the domain");
+    const record = await checker.domainReport(mainUrl);
+    if(!record){
         res.status(500).json({ error: 'No data found for provided website.' });
-       }
-       res.json(record);
+    }
+    res.json(record);
     }
     catch(err){
         console.log(`Error in reporting ${err.message}`);

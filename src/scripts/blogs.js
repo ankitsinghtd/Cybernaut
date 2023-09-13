@@ -53,7 +53,7 @@ async function displayFeaturedArticles() {
         console.error('Error fetching featured articles:', error);
     }
 }
-
+let articleID=0;
 function createArticleElement(articleData) {
     const articleContainer = document.createElement('div');
     articleContainer.classList.add('home-article'); 
@@ -62,7 +62,7 @@ function createArticleElement(articleData) {
     articleContent.classList.add('home-article-content', 'font1');
 
     const articleLink = document.createElement('a');
-    articleLink.href = './articles/articles.html'; 
+    articleLink.href = `./articles/articles.html?articleID=${articleID}`; 
     articleLink.innerHTML = `<h3>${articleData.title}</h3>`;
     articleContent.appendChild(articleLink);
 
@@ -75,7 +75,8 @@ function createArticleElement(articleData) {
     articleContent.appendChild(articleInfo); 
 
     articleContainer.appendChild(articleContent);
-
+    articleID=Number(articleID);
+    ++articleID;
     return articleContainer;
 }
 document.addEventListener('DOMContentLoaded', () => {
