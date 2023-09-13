@@ -1,18 +1,32 @@
 import express from 'express';
+import { initializeApp } from "firebase/app";
 import { config } from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fetch from 'node-fetch';
 import * as checker from './checker.js';
+import { collection, getDocs } from 'firebase/firestore';
+import { getFirestore,addDoc } from "firebase/firestore";
 
 config();
+const firebaseConfig = {
+  apiKey: process.env.Firebase_api,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId
+};
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 4000;
-
+const pap = initializeApp(firebaseConfig);
+const db = getFirestore(pap);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../')));
 
@@ -53,6 +67,26 @@ app.get('/news/:query', async (req, res) => {
         res.status(500).json({ error: "An error occurred while fetching news. Please try again later." });
     }
 });
+app.post('/submit-article', async (req, res) => {
+    const { title, description, content } = req.body;
+    const articlesCollection = collection(db, 'blogs');
+
+    try {
+        const docRef = await addDoc(articlesCollection, {
+            title,
+            description,
+            content,
+        });
+
+        console.log('Document ID:', docRef.id);
+        res.status(200).json({ message: 'Article submitted successfully' });
+    } catch (error) {
+        console.error('Error submitting article:', error);
+        res.status(500).json({ error: 'Failed to submit article' });
+    }
+});
+
+
 app.listen(port,()=>{
     console.log(`Server is running on ${port}`)
 });
