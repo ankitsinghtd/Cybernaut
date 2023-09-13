@@ -22,6 +22,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "firebase": "^10.3.1",
+    "firestore": "^1.1.6",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2"
   }
