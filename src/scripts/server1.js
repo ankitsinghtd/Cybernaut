@@ -32,6 +32,26 @@ app.use(express.static(path.join(__dirname, '../../')));
 
 const apiUrl = 'https://newsapi.org/v2/everything?q=';
 
+app.post('/ip',async (req,res)=>{
+    try{
+        console.log("after");
+        const ipadd=req.body.IP; 
+        if(!ipadd){
+            return res.status(400).json();
+       }
+       console.log("Searching about the IP");
+       const record = await checker.IPchecker(ipadd);
+       console.log(record);
+       if(!record){
+        res.status(500).json({ error: 'No data found for provided IP.' });
+       }
+       res.json(record);
+    }
+    catch(err){
+        console.log(`Error in reporting ${err.message}`);
+        res.status(500).json({ error: 'Invalid IP' });
+    }
+});
 app.post('/domain',async (req,res)=>{
     try{
         const mainUrl=req.body.Domain; 
