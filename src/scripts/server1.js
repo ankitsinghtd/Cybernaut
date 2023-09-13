@@ -52,6 +52,23 @@ app.post('/ip',async (req,res)=>{
         res.status(500).json({ error: 'Invalid IP' });
     }
 });
+app.get('/featured-articles', async (req, res) => {
+    try {
+        const articlesCollection = collection(db, 'blogs');
+        const querySnapshot = await getDocs(articlesCollection);
+        const featuredArticles = [];
+
+        querySnapshot.forEach((doc) => {
+            featuredArticles.push(doc.data());
+        });
+
+        res.json(featuredArticles);
+    } catch (error) {
+        console.error('Error fetching featured articles:', error);
+        res.status(500).json({ error: 'Failed to fetch featured articles' });
+    }
+});
+
 app.post('/domain',async (req,res)=>{
     try{
         const mainUrl=req.body.Domain; 
@@ -88,14 +105,16 @@ app.get('/news/:query', async (req, res) => {
     }
 });
 app.post('/submit-article', async (req, res) => {
-    const { title, description, content } = req.body;
+    const { title,author, description, content,date } = req.body;
     const articlesCollection = collection(db, 'blogs');
 
     try {
         const docRef = await addDoc(articlesCollection, {
             title,
+            author,
             description,
             content,
+            date,
         });
 
         console.log('Document ID:', docRef.id);
