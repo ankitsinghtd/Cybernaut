@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include your CSS and other necessary meta tags -->
+    <title>Article Title</title>
+</head>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cybernaut</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" id="theme-stylesheet" href="../styles/articles.css">
+    </head>
+    
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="logo-container">
+                    <h1 class="cybernaut-title">Cybernaut</h1>
+                </div>
+                <div class="logo">
+                    <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+                </div>
+                <div class="menu-container">
+                    <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
+                    <div class="dropdown">
+                        <a href="#" class="menu-buttons">
+                            <i class="fas fa-wrench"> Tools &#9662;</i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="/src/pages/netanalysis.html">Network Analysis</a>
+                            <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
+                            <a href="/src/pages/filescan.html">Scan a File</a>
+                        </div>
+                    </div>
+    
+                    <div class="dropdown">
+                        <a href="#" class="menu-buttons">
+                            <i class="fas fa-cogs"> Services &#9662;</i>
+                        </a>
+                        <div class="dropdown-content">
+                            <!-- <a href="/src/pages/article.html">Articles</a> -->
+                            <a href="/src/pages/blog.html">Blog</a>
+                            <a href="/src/pages/news.html">News</a>
+                        </div>
+                    </div>
+    
+                    <a href="./index.html" class="menu-buttons contact-us-button">
+                        <i class="fas fa-envelope"> Contact Us </i>
+                    </a>
+    
+                    <button id="theme-toggle">Dark/Light</button>
+                </div>
+            </div>
+        </header>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeToggle = document.getElementById('theme-toggle');
+                const themeStylesheet = document.getElementById('theme-stylesheet');
+                let currentTheme = localStorage.getItem('theme-preference') || 'light';
+    
+                // Function to toggle the theme
+                function toggleTheme() {
+                    if (currentTheme === 'light') {
+                        currentTheme = 'dark';
+                    } else {
+                        currentTheme = 'light';
+                    }
+    
+                    themeStylesheet.href = `/src/styles/blog-${currentTheme}.css`;
+                    localStorage.setItem('theme-preference', currentTheme);
+                }
+    
+                // Set the initial theme
+                themeStylesheet.href = `/src/styles/blog-${currentTheme}.css`;
+    
+                // Attach the event listener to the button
+                themeToggle.addEventListener('click', toggleTheme);
+    
+            });
+        </script>
+    <main>
+        <article>
+            <h1>Article Title</h1>
+            <p>Author: Author Name</p>
+            <p>Date: Publication Date</p>
+            <div id="articleContent">
+                <!-- Article content will be loaded dynamically here -->
+            </div>
+        </article>
+    </main>
+    <footer>
+        <!-- Your site's footer -->
+    </footer>
+</body>
+</html>

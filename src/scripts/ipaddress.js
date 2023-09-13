@@ -1,12 +1,12 @@
 let analysis;
 document.getElementById("scan-button").addEventListener('click', async function () {
-    const mainUrl = document.getElementById('iptoscan').value;
+    const ipadd = document.getElementById('iptoscan').value;
     const loadingContainer = document.getElementById('loading-container');
     const errorMessage = document.getElementById('error-message');
 
     errorMessage.style.display = 'none';
 
-    if (!mainUrl) {
+    if (!ipadd) {
         loadingContainer.style.display = 'none';
         errorMessage.textContent = 'Please enter a IP Address.';
         errorMessage.style.display = 'block';
@@ -16,18 +16,18 @@ document.getElementById("scan-button").addEventListener('click', async function 
 
     loadingContainer.style.display = 'block';
 
-    const response = await fetch('/domain', {
-
+    const response = await fetch('/ip', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ Domain: mainUrl })
+        body: JSON.stringify({ IP: ipadd })
     });
 
     if (response.ok) {
         analysis = await response.json();
         displayResult(analysis);
+        console.log(analysis.data);
     }
     else {
         const errorResponse = await response.json();
@@ -61,7 +61,7 @@ document.getElementById("scan-button").addEventListener('click', async function 
         datasets: [{
             data: [malicious, harmless, suspicious, undetected], // Adjust the data values as needed
             backgroundColor: ['#f06', '#f90', '#f33', '#f104'], // Adjust the colors as needed
-        }]
+        }]  
     };
 
     const ctx = document.getElementById("pie-chart").getContext('2d');
@@ -78,14 +78,7 @@ document.getElementById("scan-button").addEventListener('click', async function 
             },
         },
     });
-    //Summary
-    const Sum = document.getElementById("summary");
-    if ((malicious + suspicious + undetected) > harmless) {
-        Sum.innerHTML = `The sites is not safe to visit \n malicious:${malicious} || harmless:${harmless} `;
-    }
-    else {
-        Sum.innerHTML = `The site is safe to visit.`
-    }
+
 });
 
 async function displayResult(result) {
@@ -113,23 +106,15 @@ async function displayResult(result) {
     ET.innerHTML=Dns.EmergingThreats.category;
 
     const about=result.data.attributes;
-    const Reg=document.getElementById("reg");
-    const Cdate=document.getElementById("Cdate");
-    const pop=document.getElementById("Pop");
-    const type=document.getElementById("type");
-    const last=document.getElementById("last");
-    Reg.innerHTML=about.registrar;
-    const timestamp = about.creation_date;
-    const date = new Date(timestamp * 1000);
-    Cdate.innerHTML=date;
-    if(about.popularity_ranks["Cisco Umbrella"])
-    {
-        pop.innerHTML=about.popularity_ranks["Cisco Umbrella"].rank;
-    }
-    else pop.innerHTML="unranked";
-    type.innerHTML=about.categories["Forcepoint ThreatSeeker"];
-    const la = about.last_analysis_date;
-    const ladate = new Date(la * 1000);
-    last.innerHTML=ladate;
+    const Net=document.getElementById("net");
+    const Cont=document.getElementById("Cont");
+    const cty=document.getElementById("cty");
+    const Own=document.getElementById("own");
+    const loc=document.getElementById("last");
+    Net.innerHTML=about.network;
+    Cont.innerHTML=about.continent;
+    cty.innerHTML=about.country;
+    Own.innerHTML=about.as_owner;
+    loc.innerHTML=about.regional_internet_registry;
 
 }
