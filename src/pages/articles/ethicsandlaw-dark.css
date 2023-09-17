@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0c1726;
+  padding-top: 60px;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #acebf2, #013a40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+  z-index: 100;
+  height: 60px;
+}
+
+.header-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #013A40;
+  margin: 0;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo img {
+  margin-top: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-container {
+  margin-left: 12.25%;
+}
+
+.menu-buttons {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #04D9D9, #04ADBF);
+  box-shadow: 7px 6px 7px #013A40;
+  transition: all 0.3s ease;
+  margin-left: 2px;
+  position: relative;
+  font-size: 16px;
+}
+
+.menu-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.menu-buttons:hover::before {
+  border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:active::before {
+  border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:hover {
+  opacity: 1;
+  box-shadow: 0 0 5px #04D9D9, 0 0 15px #04ADBF, 0 0 15px #e631dd, 0 0 15px #ACEBF2;
+}
+
+#theme-toggle {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  color: #007bff;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+/* Dropdown styling */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #cde7eb;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 9.5px;
+  margin-left: 3px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #04ADBF;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown button.menu-buttons {
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+/* Article Styles */
+.article {
+  background-color: #0c1726;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.article h1 {
+  font-family: "Baloo Bhaina 2", cursive;
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0 0 20px;
+  color: #3f6ca6;
+}
+
+.article-intro {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #3c5973;
+}
+
+.article h2 {
+  font-family: "Baloo Bhaina 2", cursive;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #3f6ca6;
+}
+
+.article p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #3c5973;
+}
+
+.article ul,
+.article ol {
+    color: #3c5973;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
+}
+
+.article-conclusion {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+  line-height: 1.6;
+  color: #013a40;
+}
+
+.article h2::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #007BFF;
+  margin: 10px 0;
+}
+
+.article h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0 20px;
+}
+
+.article p:first-of-type::first-letter {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  float: left;
+  margin: 0 8px 0 0;
+}
+
+/* Footer Styles */
+.footer p{
+  text-align: center;
+  padding: 10px 0;
+  background-color: #007BFF;
+  color: white;
+}

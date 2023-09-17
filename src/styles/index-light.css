@@ -1,0 +1,505 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset styles and common styles */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  padding-top: 60px;
+}
+
+/* Header styles */
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #acebf2, #013a40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+  z-index: 100;
+  height: 60px; 
+}
+
+.header-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #013A40;
+  margin: 0;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo img {
+  margin-top: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-container {
+  margin-left: 12.25%;
+}
+
+.menu-buttons {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #04D9D9, #04ADBF);
+  box-shadow: 7px 6px 7px #013A40;
+  transition: all 0.3s ease;
+  margin-left: 2px;
+  position: relative;
+}
+
+.menu-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.menu-buttons:hover::before {
+  border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:active::before {
+  border-color: rgb(62, 238, 62);
+}
+
+.menu-buttons:hover {
+  opacity: 1;
+  box-shadow: 0 0 5px #04D9D9, 0 0 15px #04ADBF, 0 0 15px #e631dd, 0 0 15px #ACEBF2;
+}
+
+#theme-toggle {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  color: #007bff;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+/* Dropdown styling */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #cde7eb;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 9.5px;
+  margin-left: 3px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #04ADBF;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown button.menu-buttons {
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+/* Hero section styles */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+  color: #013A40;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.left {
+  left: 10px;
+  top: 50%;
+}
+
+.right {
+  right: 10px;
+  top: 50%;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  transition: all 0.8s ease;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.info-container {
+  padding: 0 7%;
+}
+
+.subtitle {
+  margin: 2% 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1eb2a6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.content {
+  color: #ACEBF2;
+  padding-top: 2%;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.button {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 17px 30px;
+  background-color: #1eb2a6;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  margin: 30px 10px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 24px 36px -11px rgb(0 0 0 / 9%);
+  transition: 0.5s;
+}
+
+
+
+/* Style for the "What We Do" section */
+.what-we-do {
+  background-color: #ACEBF2;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+.what-we-do h2 {
+  font-size: 32px;
+  color: #013A40;
+  margin-bottom: 20px;
+}
+
+.what-we-do p{
+  font-size: 22px;
+  color: #025959;
+  margin-bottom: 20px;
+}
+.what-we-do li{
+  font-size: 18px;
+}
+.what-we-do .section-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.what-we-do .left-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.what-we-do .left-column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.what-we-do .right-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.section-separator {
+  color: hsl(0, 4%, 78%); 
+  border-top: 1px solid #ddd;
+  margin: 0px auto;
+  width: 80%;
+}
+
+/* Style for the "How Cybernaut Works" section */
+
+.how-it-works {
+  background-color: #ACEBF2;
+  padding: 50px 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.how-it-works h2 {
+  font-size: 32px;
+  color: #013A40;
+  margin-bottom: 20px;
+}
+
+.how-it-works p {
+  font-size: 22px;
+  color: #025959;
+  margin-bottom: 20px;
+}
+.how-it-works li{
+  font-size: 18px;
+
+}
+/* Additional CSS for the two-column layout */
+.how-it-works .section-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works .left-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.how-it-works .right-column {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.how-it-works .right-column img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*Chatbot styles  */
+
+.chatbot-button img {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #040a10;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation-name: pulse-spin;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse-spin {
+  0%, 100% {
+    transform: scale(0.9) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.0) rotate(60deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(120deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(240deg);
+  }
+  85% {
+    transform: scale(1.) rotate(300deg);
+  }
+  100% {
+    transform: scale(0.9) rotate(360deg);
+  }
+}
+
+.chatbot-text{
+  position: fixed;
+  bottom: 105px;
+  right: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.chatbot-button.paused img {
+  animation-play-state: running;
+  animation-play-state: paused;
+}
+
+.chatbot-img img {
+  transition: transform 0.3s ease;
+}
+
+.chatbot {
+  display: none;
+  position: fixed;
+  bottom: 105px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.show-chatbot {
+  display: block;
+}
+
+/* Footer styles */
+
+.footer {
+  background-color: #04ADBF;
+  padding: 1px;
+  text-align: center;
+  position: relative;
+  bottom: -5px;
+  width: 99.9%;
+  transition: bottom 0.3s ease;
+}
+
+/* Footer link styles */
+.powered-by-link {
+  color: #fff;
+  /* White text */
+  text-decoration: none;
+  margin: 5px;
+  display: block;
+}
+
+.powered-by-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* responsive stuff */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 5px;
+  }
+
+  .menu-buttons {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  /* Adjust styles here */
+  .header-container {
+    padding: 3px;
+  }
+
+  .menu-buttons {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+}

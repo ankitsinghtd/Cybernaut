@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernaut</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="/src/styles/index-light.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <h1 class="cybernaut-title">Cybernaut</h1>
+            </div>
+            <div class="logo">
+                <img src="./src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+            </div>
+            <div class="menu-container">
+                <a href="./index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/src/pages/netanalysis.html">Network Analysis</a>
+                        <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
+                        <a href="/src/pages/scanip.html">Scan IP Address</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <!-- <a href="./src/pages/article.html">Articles</a> -->
+                        <a href="./src/pages/blog.html">Blog</a>
+                        <a href="./src/pages/news.html">News</a>
+                    </div>
+                </div>
+
+                <a href="/src/pages/contact.html" class="menu-buttons contact-us-button" target="_blank">
+                    <i class="fas fa-envelope"> Developers </i>
+                </a>
+
+                <button id="theme-toggle">Dark/Light</button>
+            </div>
+        </div>
+    </header>
+    <script src="./src/scripts/index.js" defer></script>
+    <div class="container">
+        <div class="arrow left" onclick="handleClick('left')">
+            <div class="icon">&lt;</div>
+        </div>
+        <div class="wrapper" id="slider-wrapper">
+            <!-- Slide items will be added here using JavaScript -->
+        </div>
+        <div class="arrow right" onclick="handleClick('right')">
+            <div class="icon">&gt;</div>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="what-we-do">
+            <div class="section-content">
+                <div class="left-column">
+                    <img src="./src/images/killchain.jpg" alt="Cybersecurity Image">
+                </div>
+                <div class="right-column">
+                    <h2>What We Do</h2>
+                    <p>Cybernaut offers a range of services and tools to help you achieve digital security:</p>
+                    <ul>
+                        <li>Network Analysis: Gain insights into network performance and statistics.</li>
+                        <li>Scan a File: Securely scan files via upload or hash.</li>
+                        <li>Content: Find the latest and easy-to-understand articles and blogs on hot topics in the
+                            domain of Cyber Security.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator">
+            <br>
+        </div>
+
+        <section class="how-it-works">
+            <div class="section-content">
+                <div class="left-column">
+                    <h2>How Cybernaut Works</h2>
+                    <p>Cybernaut uses VirusTotal API to fetch security-related information regarding the provided
+                        domain.</p>
+                    <p>We handle the end-points and data visualizations so you can focus on:</p>
+                    <ul>
+                        <li>Choosing a Service: Pick from our suite of services tailored to your needs.</li>
+                        <li>Explore & Analyze: Dive into the world of data with detailed reports and maps.</li>
+                        <li>Secure Your Digital Space: Protect your online presence with confidence.</li>
+                    </ul>
+                </div>
+                <div class="right-column">
+                    <img src="./src/images/virus.jpg" alt="Cybersecurity Image">
+                </div>
+            </div>
+        </section>
+
+
+        <div class="chatbot">
+            <script type='module'
+                src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+            <zapier-interfaces-page-embed page-id='clm6evwsq131660pmnfc1m4o3q' no-background='false'
+                style='max-width: 900px; height: 500px;'></zapier-interfaces-page-embed>
+        </div>
+
+    </main>
+    <div class="chatbot-button" id="chatbot-toggle">
+        <div class="chatbot-text">
+            <b>Queries ?</b>
+        </div>
+        <div class="chatbot-img">
+            <img src="./src/images/chatbot-icon.png" alt="Chatbot Icon" height="70" width="70">
+        </div>
+    </div>
+    <script>
+        const chatbotButton = document.getElementById("chatbot-toggle");
+        const chatbot = document.querySelector(".chatbot");
+        const chatbotImage = document.querySelector(".chatbot-img img");
+
+        let isPaused = false;
+
+        chatbotButton.addEventListener("click", () => {
+            chatbot.classList.toggle("show-chatbot");
+            chatbotButton.classList.toggle("paused");
+
+            if (isPaused) {
+                chatbotImage.style.animation = "spin 2.5s linear infinite";
+                isPaused = false;
+            } else {
+                chatbotImage.style.animation = "none";
+                isPaused = true;
+            }
+        });
+    </script>
+    <footer>
+        <div class="footer">
+            <a href="https://virustotal.com/gui/" target="_main" class="powered-by-link"> Powered By VirusTotal</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

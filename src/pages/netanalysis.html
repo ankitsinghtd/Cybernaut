@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" id="theme-stylesheet" href="../styles/netanalysis-light.css">
+    <script src="../scripts/domain.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <h1 class="cybernaut-title">Cybernaut</h1>
+            </div>
+            <div class="logo">
+                <img src="/src/images/spyder.png" alt="Cybernaut Logo" height="100" width="100">
+            </div>
+            <div class="menu-container">
+                <a href="/index.html" class="menu-buttons"><i class="fas fa-home"> Home</i></a>
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-wrench"> Tools &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="/src/pages/netanalysis.html">Network Analysis</a>
+                        <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
+                        <a href="/src/pages/scanip.html">Scan IP Address</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="menu-buttons">
+                        <i class="fas fa-cogs"> Services &#9662;</i>
+                    </a>
+                    <div class="dropdown-content">
+                        <!-- <a href="/src/pages/article.html">Articles</a> -->
+                        <a href="/src/pages/blog.html">Blog</a>
+                        <a href="/src/pages/news.html">News</a>
+                    </div>
+                </div>
+
+                <a href="/src/pages/contact.html" class="menu-buttons contact-us-button" target="_blank">
+                    <i class="fas fa-envelope"> Developers </i>
+                </a>
+
+                <button id="theme-toggle">Dark/Light</button>
+            </div>
+        </div>
+        <div class="NetworkHeader">
+            <h1>Network Analysis</h1>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeStylesheet = document.getElementById('theme-stylesheet');
+            let currentTheme = localStorage.getItem('theme-preference') || 'light';
+
+            // Function to toggle the theme
+            function toggleTheme() {
+                if (currentTheme === 'light') {
+                    currentTheme = 'dark';
+                } else {
+                    currentTheme = 'light';
+                }
+
+                themeStylesheet.href = `/src/styles/netanalysis-${currentTheme}.css`;
+                localStorage.setItem('theme-preference', currentTheme);
+            }
+
+            // Set the initial theme
+            themeStylesheet.href = `/src/styles/netanalysis-${currentTheme}.css`;
+
+            // Attach the event listener to the button
+            themeToggle.addEventListener('click', toggleTheme);
+
+        });
+    </script>
+
+    <main>
+
+        <div class="introduction">
+            <p>Welcome to Cybernaut's Network Analysis tool. Here's something to get you started:</p>
+        </div>
+
+        <div class="loading-container" id="loading-container">
+            <div class="loading-indicator">Scanning ...</div>
+            <div class="loader"></div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="urltoscan" placeholder="Enter a URL(eg:www.google.com)">
+            <a class="scan-button" id="scan-button"><b>Scan URL</b></a>
+        </div>
+
+        <div class="error-div" id="error-message" style="display: none;"></div>
+
+        <div class="description">
+            <div class="card">
+                <h2 class="card-title">What It Does</h2>
+                <p class="card-text">Our Network Analysis tool allows you to analyze and assess the performance,
+                    security, and structure of a website. Simply enter the URL of the website you want to scan, and
+                    we'll provide you with a detailed report.</p>
+            </div>
+            <div class="card">
+                <h2 class="card-title">How the Report Is Generated</h2>
+                <p class="card-text" id="report-page-anchor">After you initiate a scan, our tool will analyze various
+                    aspects of the website,
+                    including its load time, security vulnerabilities, and network structure. The results will be
+                    compiled into a comprehensive report, giving you insights into the website's performance and
+                    potential issues.</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="dns-records" class="hidden">
+                <caption>DNS Records</caption>
+                <thead>
+                    <tr>
+                        <th>Vendor</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AlienVault</td>
+                        <td id="AV">AV</td>
+                    </tr>
+                    <tr>
+                        <td>Sophos</td>
+                        <td id="SP">SP</td>
+                    </tr>
+                    <tr>
+                        <td>Bkav</td>
+                        <td id="BV">BV</td>
+                    </tr>
+                    <tr>
+                        <td>VX Vault</td>
+                        <td id="VX">VX</td>
+                    </tr>
+                    <!-- / -->
+                    <tr>
+                        <td>Google SafeBrowsing </td>
+                        <td id="GSB">VX</td>
+                    </tr>
+                    <tr>
+                        <td>Malwared</td>
+                        <td id="MAL">VX</td>
+                    </tr>
+                    <tr>
+                        <td>SOCRadar</td>
+                        <td id="SR">VX</td>
+                    </tr>
+                    <tr>
+                        <td>CrowdSec</td>
+                        <td id="CS">VX</td>
+                    </tr>
+                    <tr>
+                        <td>Kaspersky</td>
+                        <td id="Kas">VX</td>
+                    </tr>
+                    <tr>
+                        <td>EmergingThreats</td>
+                        <td id="ET">VX</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="network-statistics" class="hidden">
+                <caption>About the domain</caption>
+                <thead>
+                    <tr>
+                        <th>Last analysis</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Registrar</td>
+                        <td id="reg">1024</td>
+                    </tr>
+                    <tr>
+                        <td>Created On</td>
+                        <td id="Cdate">768</td>
+                    </tr>
+                    <tr>
+                        <td>Popularity</td>
+                        <td id="Pop">35 ms</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td id="type">50 Mbps</td>
+                    </tr>
+                    <tr>
+                        <td>Last analysis</td>
+                        <td id="last">50 Mbps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <canvas id="pie-chart" class="hidden" width="1000" height="500" style="margin-top: 80px;"></canvas>
+
+        <div id="summary" class="hidden">
+            <div id="summary">
+                <h2>Summary</h2>
+                <p>This is a summary of the network analysis results.</p>
+            </div>
+        </div>
+
+    </main>
+
+</html>
