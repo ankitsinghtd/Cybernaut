@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" id="theme-stylesheet" href="../styles/blog-light.css">
-    <script src="../scripts/blogs.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="module" src="../scripts/blogs.js" defer></script>
 </head>
 
 <body>
@@ -100,11 +102,29 @@
             </div>
         </div>
         <div class="max-width-1 m-auto">
+            <h2 id="helpText">Login to Write Article</h2>
             <div class="rw-article-buttons">
-                <button class="write-article-button">Write an article</button>
                 <button class="read-article-button">Read Articles <i class="fas fa-arrow-down"></i></button>
+                <button class="write-article-button" id="writeArticleBtn" style="display: none">Write an article</button>
+                <button class="write-article-button " id="loginButton">Login / SignUp <i class="fas fa-sign-in-alt"></i></button>
             </div>
         </div>
+
+        <div id="myModal-auth" class="modal-auth">
+            <div class="modal-content-auth">
+              <!-- Content for logging in with Google -->
+              <span class="close" id="closeModal">&times;</span>
+              <div id="loginContent">
+                <h2>Login with Google</h2>
+                <button id="loginWithGoogle" class="login-with-google-btn">Sign in with Google</button>
+              </div>
+              <!-- Content for signing up with Google -->
+              <div id="signupContent">
+                <h2>Sign Up with Google</h2>
+                <button id="signupWithGoogle" class="login-with-google-btn">Sign up with Google</button>
+              </div>
+            </div>
+          </div>
 
         <div id="articleModal" class="modal">
             <div class="modal-content">
@@ -194,6 +214,9 @@
 
         </script>
 
+       
+
+
         <div class="max-width-1 m-auto">
             <hr>
         </div>
@@ -226,5 +249,6 @@
     </main>
 
 </body>
+
 
 </html>

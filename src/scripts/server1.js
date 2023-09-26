@@ -1,5 +1,6 @@
 import express from 'express';
 import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider , signInWithPopup } from "firebase/auth"
 import { config } from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -7,18 +8,18 @@ import fetch from 'node-fetch';
 import * as checker from './checker.js';
 import { collection, getDocs } from 'firebase/firestore';
 import { getFirestore,addDoc } from "firebase/firestore";
-import { features } from 'process';
+
 
 config();
 const firebaseConfig = {
-apiKey: process.env.Firebase_api,
-authDomain: process.env.authDomain,
-projectId: process.env.projectId,
-storageBucket: process.env.storageBucket,
-messagingSenderId: process.env.messagingSenderId,
-appId: process.env.appId,
-measurementId: process.env.measurementId
-};
+    apiKey: process.env.Firebase_api,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
+    };
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -27,6 +28,10 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 4000;
 const pap = initializeApp(firebaseConfig);
+// google authentication
+const auth = getAuth(pap);
+const googleAuthProvider = new GoogleAuthProvider();
+
 const db = getFirestore(pap);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../')));
