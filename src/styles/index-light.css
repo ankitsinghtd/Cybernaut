@@ -503,3 +503,12 @@ body, html {
   }
 
 }
+
+
+ul{
+  list-style: none;
+}
+
+li{
+  margin-top: 2vh;
+}
