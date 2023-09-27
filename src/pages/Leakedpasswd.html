@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" id="theme-stylesheet" href="../styles/scanip-light.css">
-    <script src="../scripts/ipaddress.js" defer></script>
 </head>
 
 <body>
@@ -54,7 +53,7 @@
             </div>
         </div>
         <div class="ScanHeading">
-            <h1>Scan an IP Address</h1>
+            <h1>Was your Email ID in a breach ?</h1>
         </div>
     </header>
 
@@ -83,14 +82,16 @@
             themeToggle.addEventListener('click', toggleTheme);
 
         });
-    </script>
+        </script>
+
+
 
     <main>
         <section class="introduction">
             <div class="introduction-overlay">
                 <div class="intro-card">
                     <div class="introduction-text">
-                        <h2>Found a suspicious IP address ? <br>Analyze it using Cybernaut's IP Scan tool.</h2>
+                        <h2>We will search for your Email if it is any DataBreach ? <br>Enter your Email Id to check .. </h2>
                         <p></p>
                     </div>
                 </div>
@@ -102,107 +103,45 @@
         </div>
 
         <div class="search-container">
-            <input type="text" id="iptoscan" placeholder="Enter an IP Address">
-            <a class="scan-button" id="scan-button"><b>Scan IP</b></a>
+            <input type="text" id="iptoscan" placeholder="Enter your email id">
+            <a class="scan-button" id="scanButton" ><b>LookUp</b></a>
+            
         </div>
 
-        <div class="error-div" id="error-message" style="display: none;"></div>
+        
 
-        <div class="table-container">
-            <table id="dns-records" class="hidden">
-                <caption>DNS Records</caption>
-                <thead>
-                    <tr>
-                        <th>Vendor</th>
-                        <th>Result</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AlienVault</td>
-                        <td id="AV">AV</td>
-                    </tr>
-                    <tr>
-                        <td>Sophos</td>
-                        <td id="SP">SP</td>
-                    </tr>
-                    <tr>
-                        <td>Bkav</td>
-                        <td id="BV">BV</td>
-                    </tr>
-                    <tr>
-                        <td>VX Vault</td>
-                        <td id="VX">VX</td>
-                    </tr>
-                    <!-- / -->
-                    <tr>
-                        <td>Google SafeBrowsing </td>
-                        <td id="GSB">VX</td>
-                    </tr>
-                    <tr>
-                        <td>Malwared</td>
-                        <td id="MAL">VX</td>
-                    </tr>
-                    <tr>
-                        <td>SOCRadar</td>
-                        <td id="SR">VX</td>
-                    </tr>
-                    <tr>
-                        <td>CrowdSec</td>
-                        <td id="CS">VX</td>
-                    </tr>
-                    <tr>
-                        <td>Kaspersky</td>
-                        <td id="Kas">VX</td>
-                    </tr>
-                    <tr>
-                        <td>EmergingThreats</td>
-                        <td id="ET">VX</td>
-                    </tr>
-                </tbody>
-            </table>
+       </main>
+    </body>
 
-            <table id="network-statistics" class="hidden">
-                <caption>About the IP</caption>
-                <thead>
-                    <tr>
-                        <th>Last analysis</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Owner</td>
-                        <td id="own">50 Mbps</td>
-                    </tr>
-                    <tr>
-                        <td>Local Registrar</td>
-                        <td id="last">50 Mbps</td>
-                    </tr>
-                    <tr>
-                        <td>Network</td>
-                        <td id="net">1024</td>
-                    </tr>
-                    <tr>
-                        <td>Continent</td>
-                        <td id="Cont">768</td>
-                    </tr>
-                    <tr>
-                        <td>Country</td>
-                        <td id="cty">35 ms</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <script>
+    // Get a reference to the "LookUp" link
+    const scanButton = document.getElementById('scanButton');
+    const inputField = document.getElementById('iptoscan');
 
-        <canvas id="pie-chart" class="hidden" width="1000" height="500" style="margin-top: 80px;"></canvas>
+    console.log(inputField.value);
 
-        <div id="summary" class="hidden">
-            <div id="summary">
-                <h2>Summary</h2>
-                <p>This is a summary of the IP Address results.</p>
-            </div>
-        </div>
-    </main>
+    // Add an event listener to the link to show an alert when clicked
+    scanButton.addEventListener('click', function () {
+        // const inputValue = inputField.value;
+        // Show an alert with the input field's value
+        // scanButton.href = `https://monitor.firefox.com/scan#email=${email}`;
+        
+        // Follow the link by simulating a click
+        // window.location.href = scanButton.href;
+        
+        
+        const inputValue = inputField.value;
+        const url = `https://monitor.firefox.com/scan#email=${inputValue}`;
+        console.log(url);
+
+        
+        if (url.trim() !== '') {
+            // Redirect to the entered URL
+            window.open(url, '_blank');
+        } else {
+            alert('Please enter a valid website URL.');
+        }
+    });
+</script>
 
 </html>
