@@ -7,14 +7,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://w
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB1OGHl2ky2xDsM4Nk2aU1OJQA59XNd5ko",
-  authDomain: "campusconnect-ee00f.firebaseapp.com",
-  databaseURL: "https://campusconnect-ee00f-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "campusconnect-ee00f",
-  storageBucket: "campusconnect-ee00f.appspot.com",
-  messagingSenderId: "730297891141",
-  appId: "1:730297891141:web:8d888548dcc8bb1e7f262c",
-  measurementId: "G-WH87NQ4TS6"
+  _redacted_
 };
 
 // Initialize Firebase
