@@ -115,3 +115,16 @@ setInterval(() => {
     slideIndex = slideIndex < 2 ? slideIndex + 1 : 0;
     sliderWrapper.style.transform = `translateX(${slideIndex * -100}vw)`;
 }, 4000);
+
+
+document.addEventListener("click", function(event) {
+    var chatbotButton = document.getElementById("chatbot-toggle");
+    var hidebutton = document.getElementById("chatbotContent");
+    if (event.target !== chatbotButton && !chatbotButton.contains(event.target)) {
+        // Clicked outside of the chatbot-button, so close it
+        // chatbotButton.style.display = "none";
+        hidebutton.style.display  = "none";
+    } else{
+        hidebutton.style.display = "block";
+    }
+});

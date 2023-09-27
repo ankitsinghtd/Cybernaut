@@ -497,3 +497,13 @@ body, html {
   }
 
 }
+
+
+ul{
+  list-style: none;
+  margin-top: 2vh;
+}
+
+li{
+  margin-top: 2vh;
+}
