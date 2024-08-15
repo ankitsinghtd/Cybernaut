@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Breach</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" id="theme-stylesheet" href="../styles/scanip-light.css">
 </head>
 
@@ -28,33 +27,28 @@
                     </a>
                     <div class="dropdown-content">
                         <a href="/src/pages/netanalysis.html">Network Analysis</a>
-                        <!-- <a href="/src/pages/webstructure.html">Website Structure</a> -->
                         <a href="/src/pages/scanip.html">Scan IP Address</a>
                         <a href="/src/pages/Leakedpasswd.html">Leaked Credentials</a>
                         <a href="/src/pages/PassCreator.html">Password Generator</a>
                     </div>
                 </div>
-
                 <div class="dropdown">
                     <a href="#" class="menu-buttons">
                         <i class="fas fa-cogs"> Services &#9662;</i>
                     </a>
                     <div class="dropdown-content">
-                        <!-- <a href="/src/pages/article.html">Articles</a> -->
                         <a href="/src/pages/blog.html">Blog</a>
                         <a href="/src/pages/news.html">News</a>
                     </div>
                 </div>
-
                 <a href="/src/pages/contact.html" class="menu-buttons contact-us-button" target="_blank">
                     <i class="fas fa-envelope"> Developers </i>
                 </a>
-
                 <button id="theme-toggle">Dark/Light</button>
             </div>
         </div>
         <div class="ScanHeading">
-            <h1>Was your Email ID in a breach ?</h1>
+            <h1>Password Generator</h1>
         </div>
     </header>
 
@@ -81,68 +75,90 @@
 
             // Attach the event listener to the button
             themeToggle.addEventListener('click', toggleTheme);
-
         });
-        </script>
-
-
+    </script>
 
     <main>
         <section class="introduction">
             <div class="introduction-overlay">
                 <div class="intro-card">
                     <div class="introduction-text">
-                        <h2>We will search for your Email if it is any DataBreach ? <br>Enter your Email Id to check .. </h2>
+                        <h2>Generate a strong password easily. Enter the desired length and click Generate.</h2>
                         <p></p>
                     </div>
                 </div>
         </section>
 
-        <div class="loading-container" id="loading-container">
-            <div class="loading-indicator">Scanning ...</div>
+        <div class="loading-container" id="loading-container" style="display: none;">
+            <div class="loading-indicator">Generating...</div>
             <div class="loader"></div>
         </div>
 
         <div class="search-container">
-            <input type="text" id="iptoscan" placeholder="Enter your email id">
-            <a class="scan-button" id="scanButton" ><b>LookUp</b></a>
-            
+            <input type="number" id="passwordLength" placeholder="Enter desired password length">
+            <a class="scan-button" id="generateButton"><b>Generate</b></a>
+            <a class="scan-button" id="copyButton"><b>Copy</b></a>
+            <p id="generatedPassword"></p>
         </div>
-
         
+        <section class="secure-password-info">
+            <h2>Why a Secure Password is Important</h2>
+            <p>A secure password is crucial for safeguarding personal and sensitive information in our increasingly digital world. It acts as the first line of defense against unauthorized access to accounts, data, and systems. Strong passwords are essential because they prevent easy exploitation by hackers and malicious software, reducing the risk of identity theft, financial loss, and privacy breaches. Unlike weak passwords, which are easily guessed or cracked through common techniques, secure passwords use a mix of uppercase letters, lowercase letters, numbers, and special characters, making them more resistant to attacks. Additionally, regularly updating passwords and avoiding reuse across different accounts further enhances security. By prioritizing the use of robust, unique passwords, individuals and organizations can better protect their digital assets and maintain the confidentiality of their personal and professional information.</p>
+        </section>
+    </main>
 
-       </main>
-    </body>
+    </main>
 
     <script>
-    // Get a reference to the "LookUp" link
-    const scanButton = document.getElementById('scanButton');
-    const inputField = document.getElementById('iptoscan');
+        const generateButton = document.getElementById('generateButton');
+        const passwordLengthInput = document.getElementById('passwordLength');
+        const generatedPasswordDisplay = document.getElementById('generatedPassword');
+        const copyButton = document.getElementById('copyButton');
 
-    console.log(inputField.value);
+function generatePassword(length) {
+    const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?<>!~`|@#$%^&*()[]{},./_-+=";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        password += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return password;
+}
 
-    // Add an event listener to the link to show an alert when clicked
-    scanButton.addEventListener('click', function () {
-        // const inputValue = inputField.value;
-        // Show an alert with the input field's value
-        // scanButton.href = `https://monitor.firefox.com/scan#email=${email}`;
-        
-        // Follow the link by simulating a click
-        // window.location.href = scanButton.href;
-        
-        
-        const inputValue = inputField.value;
-        const url = `https://monitor.firefox.com/scan#email=${inputValue}`;
-        console.log(url);
+function handlePasswordGeneration() {
+    const length = parseInt(passwordLengthInput.value);
+    if (isNaN(length) || length <= 0) {
+        alert('Give a desired length first!!!');
+        return;
+    }
+    const password = generatePassword(length);
+    generatedPasswordDisplay.textContent = `${password}`;
+}
 
-        
-        if (url.trim() !== '') {
-            // Redirect to the entered URL
-            window.open(url, '_blank');
-        } else {
-            alert('Please enter a valid website URL.');
-        }
+generateButton.addEventListener('click', handlePasswordGeneration);
+
+passwordLengthInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        handlePasswordGeneration();
+    }
+});
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        copyButton.classList.add('copied');
+        setTimeout(() => copyButton.classList.remove('copied'), 1000);
+    }).catch(err => {
+        console.error('Failed to copy password: ', err);
     });
-</script>
+}
 
+copyButton.addEventListener('click', () => {
+    const password = generatedPasswordDisplay.textContent;
+    if (password) {
+        copyToClipboard(password);
+    } else {
+        alert('Generate a password first!');
+    }
+});
+</script>
+</body>
 </html>
